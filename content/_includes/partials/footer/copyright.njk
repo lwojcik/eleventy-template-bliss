@@ -1,8 +1,7 @@
   {%- set site = siteConfig.site -%}
   {%- set author = siteConfig.author -%}
-  {%- set license = siteConfig.site.license -%}
-  {%- set codeLicense = siteConfig.site.codeLicense -%}
+  
   <div class="copyright">
-    &copy; {{ site.startYear }}-{% currentYear %} <a href="{{ author.url }}">{{ author.name }}</a>. {{ phrases.brought_to_you_from }} {{ author.location }}.<br>
-    {{ phrases.content_license }}: <a rel="nofollow" href="{{ license.url }}" title="{{ license.name }}">{{ license.shorthand }}</a> &bull; {{ phrases.code_license }}: <a href="{{ codeLicense.url }}">{{ codeLicense.name }}</a>
+    &copy; {{ site.startYear }}-{% currentYear %} <a href="{{ author.url }}">{{ author.name }}</a><br>
+    Powered by <a href="https://www.11ty.dev/">Eleventy</a> {{ phrases.meta_separator }} Template: <a href="https://github.com/offbeatbits/eleventy-bliss-template">Bliss</a> by <a href="https://offbeatbits.com/">Offeat Beats</a>
   </div>

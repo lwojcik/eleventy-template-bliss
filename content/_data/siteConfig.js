@@ -1,67 +1,32 @@
 module.exports = {
   site: {
-    title: 'Eleventy Bliss',
-    description:
-      'Essays on life, technology, universe and everything in between. Personal writing by Łukasz Wójcik',
-    url: 'https://offbeatbits.com/',
+    title: 'Bliss',
+    description: 'Simple Eleventy blog template',
+    url: 'https://eleventy-bliss.vercel.app/',
     language: 'en',
-    startYear: 2020,
-    version: 3,
-    generator: 'Eleventy',
-    languages: 'English, Polish',
-    ide: 'Visual Studio Code',
-    doctype: 'HTML5',
-    license: {
-      name: 'Creative Commons Attribution 4.0 International',
-      shorthand: 'CC BY 4.0',
-      url: 'https://creativecommons.org/licenses/by/4.0/',
-    },
-    codeLicense: {
-      name: 'MIT License',
-      shorthand: 'MIT',
-      url: 'https://github.com/offbeatbits/eleventy-bliss-template/blob/main/LICENSE',
-    },
+    startYear: 2022,
+    version: 1,
+    generator: 'Eleventy v2.0.0',
     github: 'https://github.com/offbeatbits/eleventy-bliss-template',
   },
   author: {
-    name: 'Łukasz Wójcik',
+    name: 'John Doe',
     url: 'https://lukaszwojcik.net/',
     contact: 'https://lukaszwojcik.net/contact/',
     postal: 'https://lukem.net/contact/',
     resume: 'https://lukaszwojcik.net/resume/',
     fediverse: [
       {
-        username: 'lukem',
-        server: 'masto.ai',
-        url: 'https://masto.ai/@lukem',
-      },
-      {
-        username: 'lukem',
-        server: 'mstdn.games',
-        url: 'https://mstdn.games/@lukem',
+        username: 'JohnMastodon',
+        server: 'mastodon.social',
+        url: 'https://mastodon.social/@JohnMastodon',
       },
     ],
-    nostr: {
-      name: 'lukem',
-      hexPubKey:
-        'd34176d2e51b521630e411b3201d855d15f544a786825514fbe6a98f1e89b1f9',
-    },
-    languages: 'Polish (native), English',
-    location: 'Warsaw, Poland',
   },
   dateFormats: {
     numerical: 'dd.MM.yyyy',
     readable: 'd LLL yyyy',
     fullReadable: 'd LLLL yyyy',
-  },
-  security: {
-    contact: [
-      'https://www.lukem.net/contact/',
-      'https://lukaszwojcik.net/contact/',
-    ],
-    expires: '2029-12-31T22:59:00.000Z',
-    encryption: 'https://lukaszwojcik.net/pgp',
-    preferredLanguages: 'en, pl',
   },
   feed: {
     stylesheet: '/feed.xsl',
@@ -132,15 +97,5 @@ module.exports = {
     language: 'en-US',
     themeColor: '#255b40',
     backgroundColor: '#255b40',
-  },
-  epub: {
-    title: 'Eleventy Bliss Template',
-    author: 'Łukasz Wójcik',
-    cover: '_site/icon-512.png',
-    fileName: 'offbeatbits.epub',
-  },
-  pdf: {
-    format: 'A4',
-    fileName: 'blisstemplate.pdf',
   },
 };

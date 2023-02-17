@@ -1,6 +1,0 @@
-<h1 style="page-break-before: always">Table of contents</h1>
-<ul class="table-of-contents">
-  {%- for post in collections.publishedEnglishPosts|reverse %}
-    <li><a href="#{{ post.data.title|slugify }}">{{ post.data.title|safe }}</a></li>
-  {%- endfor -%}
-</ul>
