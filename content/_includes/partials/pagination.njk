@@ -1,0 +1,41 @@
+{% if totalPages > 1 %}
+  <nav class="pagination">
+    <ul>
+      <li class="links previous">
+        {% if previousHref %}
+          <a href="{{ previousHref }}">
+            <span class="arrow">{{ phrases.left_arrow_symbol }}</span>{{ phrases.newer }} <span class="articles">{{ phrases.articles }}</span>
+          </a>
+        {% else %}
+          <span class="inactive-link">
+            <span class="arrow">{{ phrases.left_arrow_symbol }}</span>{{ phrases.newer }} <span class="articles">{{ phrases.articles }}</span>
+          </span>
+        {% endif %}
+      </li>
+      {% if currentPage %}
+      <li class="current">
+        <form class="jump-to-page-form">
+          <label for="jump-to-page" class="page input-label">{{ phrases.go_to_page }}:</label>
+          <div class="fields">
+            <input id="jump-to-page" class="page-number-input" title="{{ phrases.page_number_hint }}" type="number" enterkeyhint="go" inputmode="numeric" min="1" max="{{ totalPages }}" value="{{ currentPage }}">
+            <span class="of">{{ phrases.of }} </span>
+            <span class="total-pages">{{ totalPages }}</span>
+            <input type="submit" class="jump-button" disabled value="{{ phrases.go }}">
+          </div>
+        </form>
+      </li>
+      {% endif %}
+      <li class="links next">
+      {% if nextHref %}
+        <a href="{{ nextHref }}">
+          {{ phrases.older }} <span class="articles">{{ phrases.articles }}</span> <span class="arrow">{{ phrases.right_arrow_symbol }}</span>
+        </a>
+      {% else %}
+        <span class="inactive-link">
+          {{ phrases.older }} <span class="articles">{{ phrases.articles }}</span> <span class="arrow">{{ phrases.right_arrow_symbol }}</span>
+        </span>
+      {% endif %}
+    </li>
+  </ul>
+</nav>
+{% endif %}

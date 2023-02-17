@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html{% if siteConfig.site.language %} lang="{{ siteConfig.site.language }}" {% endif %}{% if siteConfig.site.dir %} dir="{{ siteConfig.site.dir }}" {% endif %}class="no-js">
+  <head>
+    {% include "partials/head.njk" %}
+  </head>
+  <body>
+    {% include "partials/header.njk" %}
+    <div id="main" class="container">
+      {{ content|safe }}
+      {% include "partials/footer.njk" %}
+    </div>
+  </body>
+</html>

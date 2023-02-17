@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem;
+  margin-bottom: 4rem;
+  font-size: 1.25rem;
+
+  menu {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  @import 'header/hamburger';
+  @import 'header/site_logo';
+  @import 'header/main_nav';
+  @import 'header/theme_switcher';
+  @import 'header/site_links';
+}
+
+@include noJS {
+  .theme-switcher {
+    display: none;
+  }
+}
+
+@include belowMenuBreakpoint {
+  .header {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: var(--background-color);
+  }
+}

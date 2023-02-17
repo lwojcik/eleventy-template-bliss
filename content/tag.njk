@@ -1,0 +1,41 @@
+---
+layout: base
+permalink: /{{ siteConfig.tags.pageUrlPrefix }}/{{ tag.slug }}/
+pagination:
+  data: collections.articlesByTags
+  size: 1
+  alias: tag
+  filter:
+    - page
+    - post
+    - all
+---
+
+<h1>{{ phrases.articles_tagged_as }} "{{ tag.title }}"</h1>
+
+<div class="post-list">
+  <ul>
+  {% for post in tag.items %}
+    <li>
+      {% include "partials/single-post-excerpt.njk" %}
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+{%- set totalPages = tag.totalPages -%}
+{%- set currentPage = tag.currentPage -%}
+
+{% if tag.href.previous %}
+  {%- set previousHref -%}
+    /{{ siteConfig.tags.pageUrlPrefix }}/{{ tag.href.previous }}
+  {%- endset -%}
+{%- endif -%}
+
+{% if tag.href.next %}
+  {%- set nextHref -%}
+    /{{ siteConfig.tags.pageUrlPrefix }}/{{ tag.href.next }}
+  {%- endset -%}
+{%- endif -%}
+
+{% include "partials/pagination.njk" %}

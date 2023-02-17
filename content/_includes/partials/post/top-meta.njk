@@ -1,0 +1,7 @@
+{%- set wordCount -%}{{ content | striptags | wordcount }}{%- endset -%}
+{%- set readingTime -%}{{ wordCount | readingTimeMin }}{%- endset -%}
+<div class="top-meta">
+  <time>{{ date|readableDate }}</time>
+  <span class="separator">{{ phrases.meta_separator }}</span>  
+  <span data-tooltip="{{ wordCount }} {{ phrases.words }}" class="tooltip-bottom reading-time">{{ readingTime }} {{ phrases.min }} {{ phrases.read }}</span>
+</div>

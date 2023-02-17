@@ -1,0 +1,36 @@
+<div class="feed-list">
+  <ul>
+    <li>
+      <a href="{{ siteConfig.feed.excerpts.path }}">
+        {% include "svg/rss.svg" %}
+        <span class="name">{{ siteConfig.feed.excerpts.title }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ siteConfig.feed.full.path }}">
+        {% include "svg/rss.svg" %}
+        <span class="name">{{ siteConfig.feed.full.title }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ siteConfig.json.excerpts.path }}">
+        {% include "svg/json-feed.svg" %}
+        <span class="name">{{ siteConfig.json.excerpts.title }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ siteConfig.json.full.path }}">
+        {% include "svg/json-feed.svg" %}
+        <span class="name">{{ siteConfig.json.full.title }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ siteConfig.twtxt.path }}">
+        <span class="twtxt-logo">
+          {% include "svg/twtxt.svg" %}
+        </span>
+        <span class="name">{{ siteConfig.twtxt.title }}</span>
+      </a>
+    </li>
+  </ul>
+</div>

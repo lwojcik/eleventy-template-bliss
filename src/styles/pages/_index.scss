@@ -1,0 +1,76 @@
+.post-list {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  article {
+    margin-top: 4rem;
+
+    @include mobile {
+      margin-top: 3rem;
+    }
+
+    header {
+      margin-bottom: 0.75rem;
+
+      @include mobile {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .post-title {
+    display: inline;
+    margin-top: 0.5rem;
+    font-size: 1.625rem;
+    letter-spacing: 0.025rem;
+    line-height: 1;
+  }
+
+  .excerpt {
+    font-size: 1.125rem;
+
+    @include mobile {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+
+  a:hover,
+  a:focus {
+    .post-title {
+      text-decoration: underline;
+    }
+
+    .read-more {
+      .arrow {
+        left: 0.25rem;
+      }
+    }
+  }
+
+  .post-meta {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    display: flex;
+    font-family: var(--arial-font-family);
+    color: var(--post-meta-color);
+
+    @include mobile {
+      margin-top: 0.5rem;
+    }
+
+    .separator {
+      padding: 0 0.375rem;
+    }
+  }
+}

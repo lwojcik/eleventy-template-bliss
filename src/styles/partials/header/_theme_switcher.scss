@@ -1,0 +1,49 @@
+.theme-switcher {
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    display: block;
+    box-sizing: border-box;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--theme-switcher-color);
+    @include transition(opacity);
+
+    &.light-toggle {
+      display: none;
+    }
+
+    &.dark-toggle {
+      display: block;
+    }
+  }
+
+  &:hover svg {
+    opacity: 0.8;
+  }
+
+  &.dark {
+    svg {
+      &.light-toggle {
+        display: block;
+      }
+
+      &.dark-toggle {
+        display: none;
+      }
+    }
+  }
+}
+
+@include belowMenuBreakpoint {
+  .theme-switcher {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}

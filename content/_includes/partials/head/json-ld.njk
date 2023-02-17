@@ -1,0 +1,26 @@
+{%- set site = siteConfig.site -%}
+{%- set author = siteConfig.author -%}
+{%- set opengraph = siteConfig.opengraph -%}
+{%- set pageDescription -%}
+  {%- if description -%}
+    {{ description | truncate(140) }}
+  {%- else -%}
+    {{ siteConfig.site.description }}
+  {%- endif -%}
+{%- endset -%}
+{%- set jsonLD -%}
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{%- if title -%}{{ title }}{%- else -%}{{ site.title }}{%- endif -%}",
+        "image": ["{%- if image -%}{{ image | alwaysProductionUrl }}{%- else -%}{{ opengraph.image | alwaysProductionUrl }}{%- endif -%}"],
+        "author": {
+            "@type": "Person",
+            "name": "{{ author.name }}"
+        },
+        "mainEntityOfPage": "{{ page.url | alwaysProductionUrl }}",
+        "datePublished": "{{ collections.publishedPosts | getNewestCollectionItemDate | isoDate }}",
+        "description": "{{ pageDescription }}"
+    }
+{% endset -%}
+<script type="application/ld+json">{{ jsonLD | minifyInlineJSON | safe }}</script>

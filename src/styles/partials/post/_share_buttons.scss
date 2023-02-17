@@ -1,0 +1,96 @@
+.share-buttons {
+  position: relative;
+
+  p {
+    margin: 0;
+    padding: 0 0 1rem;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  [data-tooltip]::after {
+    min-width: 9rem;
+  }
+
+  @include mobile {
+    .mastodon[data-tooltip]::after {
+      left: 230%;
+    }
+
+    .twitter[data-tooltip]::after {
+      left: 80%;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+
+    div {
+      cursor: pointer;
+    }
+
+    a,
+    div {
+      border: 2px solid var(--link-color);
+      padding: 0.5rem;
+      margin: 0 0.75rem 0.75rem 0;
+      border-radius: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+
+        .fillable {
+          fill: var(--link-color);
+          @include transition(fill);
+        }
+
+        .fillable-2 {
+          fill: var(--background-color);
+          @include transition(fill);
+        }
+
+        &.hackernews {
+          path {
+            fill: var(--background-color);
+          }
+        }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: var(--link-color);
+
+        svg {
+          .fillable {
+            fill: var(--background-color);
+          }
+          .fillable-2 {
+            fill: var(--link-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include noJS {
+  .mastodon,
+  .clipboard {
+    display: none;
+  }
+}

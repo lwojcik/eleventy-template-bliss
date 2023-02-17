@@ -1,0 +1,4 @@
+{%- set fediverse = siteConfig.author.fediverse -%}
+{% for account in fediverse -%}
+<link rel="me" href="{{ account.url }}" title="@{{ account.username }}@{{ account.server }}" />
+{% endfor -%}

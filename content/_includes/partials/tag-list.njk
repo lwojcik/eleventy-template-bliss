@@ -1,0 +1,16 @@
+{% if siteConfig.tags.displayOnArchivePage %}
+<h2 id='tags'>{{ phrases.tags }}</h2>
+<div class="tag-list">
+  <ul>
+  {% for tag in collections.tagList %}
+    {%- set tagUrl -%}/{{ siteConfig.tags.pageUrlPrefix }}/{{ tag | slugify }}/{%- endset -%}
+    <li>
+      <a href="{{ tagUrl }}" title="{{ phrases.articles_tagged_as }} '{{ tag }}'">
+        <span class="name">{{ tag }}</span>
+        <span class="count">({{ collections[tag]| length }})</span>
+      </a>
+    </li>
+    {% endfor %}    
+  </ul>
+</div>
+{% endif %}

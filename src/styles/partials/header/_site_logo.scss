@@ -1,0 +1,53 @@
+.site-logo {
+  display: flex;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 3rem;
+    height: 3rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: var(--heading-font-family);
+    @include transition(opacity);
+
+    span {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .title {
+      display: none;
+      padding-left: 0.75rem;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 0.9;
+    }
+  }
+}
+
+@include belowMenuBreakpoint {
+  .site-logo {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    a {
+      flex-direction: row;
+      width: auto;
+
+      img,
+      svg {
+        height: 3rem;
+      }
+
+      span {
+        display: block;
+      }
+    }
+  }
+}

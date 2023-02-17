@@ -1,0 +1,38 @@
+.read-offline-list {
+  margin: 3rem 0 0;
+  padding: 0;
+
+  li {
+    margin: 0 0 2.25rem;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &:focus {
+      .fillable {
+        fill: var(--link-hover-color);
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    line-height: 1;
+    border-bottom: 2px solid;
+    padding-bottom: 4px;
+    margin-left: 0.5rem;
+  }
+
+  svg {
+    height: 2.5rem;
+
+    .fillable {
+      fill: var(--link-color);
+    }
+  }
+}

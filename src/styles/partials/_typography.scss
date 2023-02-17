@@ -1,0 +1,136 @@
+html {
+  font-size: var(--base-font-size);
+  font-family: var(--text-font-family), var(--emoji-font-family);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+}
+
+h1 {
+  font-size: 2.75rem;
+  line-height: 1.1;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  letter-spacing: 0.0125rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  letter-spacing: 0.0125rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  letter-spacing: 0.0125rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+  letter-spacing: 0.0125rem;
+}
+
+h6 {
+  font-size: 1rem;
+  letter-spacing: 0.0125rem;
+}
+
+p,
+li,
+blockquote {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.01rem;
+}
+
+strong,
+b {
+  font-weight: bold;
+  font-family: var(--serif-bold-font-family);
+}
+
+i,
+em {
+  font-style: italic;
+  font-family: var(--serif-italic-font-family);
+}
+
+strong > i,
+b > i,
+strong > em,
+b > em {
+  font-weight: bold;
+  font-family: var(--serif-bold-italic-font-family);
+}
+
+ul {
+  padding-left: 1.75rem;
+  list-style-type: square;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+li {
+  margin-bottom: 1rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+ul {
+  margin-bottom: 2rem;
+}
+
+blockquote {
+  font-style: italic;
+  margin-left: 0;
+  padding: 0 1rem 0.5rem 2.5rem;
+  position: relative;
+
+  &:before {
+    content: '"';
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@include mobile {
+  h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p,
+  li {
+    font-size: 1.125rem;
+  }
+}

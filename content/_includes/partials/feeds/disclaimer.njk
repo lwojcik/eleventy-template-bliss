@@ -1,0 +1,2 @@
+{% set disclaimer = post.data.disclaimer %}
+{%- if disclaimer -%}&lt;p&gt;&lt;b&gt;{{ phrases.disclaimer }}:&lt;/b&gt; {% if disclaimer.url -%}&lt;a href=&quot;{{ disclaimer.url }}&quot;&gt;{{ disclaimer.text }} {{ phrases.right_arrow_symbol }}&lt;/a&gt;{%- else -%}{{ disclaimer.text }}{%- endif -%}&lt;/p&gt;{%- endif -%}

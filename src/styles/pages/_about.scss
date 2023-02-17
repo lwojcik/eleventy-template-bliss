@@ -1,0 +1,14 @@
+.myphoto {
+  display: block;
+  float: right;
+  margin: 0 0 1rem 2rem;
+  width: 100%;
+  max-width: 16rem;
+}
+
+@include mobile {
+  .myphoto {
+    float: none;
+    margin: 2rem auto;
+  }
+}

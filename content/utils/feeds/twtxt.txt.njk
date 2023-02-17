@@ -1,0 +1,25 @@
+---
+permalink: /twtxt.txt
+eleventyExcludeFromCollections: true
+---
+# | |___      _| |___  _| |_
+# | __\ \ /\ / / __\ \/ / __|
+# | |_ \ V  V /| |_ >  <| |_
+#  \__| \_/\_/  \__/_/\_\\__|
+#
+# Twtxt is an open, distributed microblogging platform that
+# uses human-readable text files, common transport protocols,
+# and free software.
+#
+# Learn more about twtxt at https://github.com/buckket/twtxt
+#
+# nick        = {{ siteConfig.twtxt.nick }}
+# url         = {{ siteConfig.twtxt.path | alwaysProductionUrl }}
+# avatar      = {{ siteConfig.twtxt.avatar | alwaysProductionUrl }}
+# description = {{ siteConfig.site.description }}
+# lang        = en
+#
+{%- for post in collections.publishedPosts|reverse|limitLast(100) %}
+{%- set absolutePostUrl %}{{ post.url | alwaysProductionUrl }}{% endset %}
+{{ post.date | dateToRfc3339 }}	{{ post.data.title }}{{ siteConfig.twtxt.separator }}{{ absolutePostUrl }}
+{%- endfor %}

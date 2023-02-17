@@ -1,0 +1,23 @@
+{%- set site = siteConfig.site -%}
+{%- set author = siteConfig.author -%}
+  
+{%- set author_info -%}
+  {%- if author.url -%}
+    <a href="{{ author.url }}">{{ author.name }}</a>
+  {%- else -%}
+    {{ author.name }}
+  {%- endif -%}
+{%- endset -%}
+  
+{%- set startYear -%}
+  {%- if site.startYear -%}
+    {{ site.startYear }}-
+  {%- endif -%}
+{%- endset -%}
+
+<div class="copyright">
+  &copy; {{ startYear }}{% currentYear %} {{ author_info|safe }}<br>
+  {{ phrases.powered_by }} <a href="{{ site.generator.url }}">{{ site.generator.name }}</a>
+  {{ phrases.meta_separator }}
+  {{ phrases.template }}: <a href="{{ site.template.url }}">{{ site.template.name }}</a> {{ phrases.by }} <a href="{{ site.template.credit.url }}">{{ site.template.credit.name }}</a>
+</div>

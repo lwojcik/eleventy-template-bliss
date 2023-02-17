@@ -1,0 +1,24 @@
+---
+permalink: "{{ siteConfig.json.full.path }}"
+eleventyExcludeFromCollections: true
+---
+{%- set site = siteConfig.site -%}
+{%- set json = siteConfig.json -%}
+{%- set itemLimit = json.full.limit -%}
+{%- set feedUrl -%}{{ json.full.path | alwaysProductionUrl }}{%- endset -%}
+{%- set userComment = json.full.title -%}
+{
+  {%- include "partials/feeds/json/feed-meta.njk" -%}
+  "items": [
+    {%- for post in collections.publishedPosts|limit(itemLimit) -%}
+    {%- set absolutePostUrl %}{{ post.url | alwaysProductionUrl }}{% endset -%}
+    {
+      {%- include "partials/feeds/json/item-meta.njk" -%}
+      "content_html": "{%- include "partials/feeds/disclaimer.njk" -%}{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}"
+    }
+    {%- if not loop.last -%}
+    ,
+    {%- endif -%}
+    {%- endfor -%}
+  ]
+}

@@ -1,0 +1,21 @@
+<ul class="archive">
+  {% for yearlyArchive in collections.publishedPosts | groupByYear %}
+    <li>
+      <h3 tabindex='0' class="year-heading" id="year-{{ yearlyArchive.year }}">
+        {% emoji "▼", "arrow" %} <time>{{ yearlyArchive.year }}</time>
+      </h3>
+      <ul class="list posts-{{ yearlyArchive.year }}"> 
+      {% for post in yearlyArchive.posts %}
+        <li class="post">
+          <time>{{ post.date | archivePageDate }}</time>
+          <a href="{{ post.url }}">
+            <span>
+              {{ post.data.title }}
+            </span>
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,58 @@
+.post-navigation {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    li {
+      max-width: 45%;
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+      flex: 1;
+
+      @include mobile {
+        max-width: 100%;
+        margin: 0.5rem 0;
+      }
+
+      a {
+        text-decoration: none;
+        height: 100%;
+        @include transition(background);
+
+        @include mobile {
+          padding: 1rem 0;
+        }
+
+        .headline {
+          display: block;
+          color: var(--text-color);
+        }
+
+        .title {
+          font-size: 1.125rem;
+        }
+
+        svg {
+          display: inline;
+          width: 1rem;
+          fill: var(--link-color);
+        }
+
+        &:hover,
+        &:focus {
+          svg {
+            fill: var(--link-hover-color);
+          }
+        }
+      }
+    }
+  }
+}

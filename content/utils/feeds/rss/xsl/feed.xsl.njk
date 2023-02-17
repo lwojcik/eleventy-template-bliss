@@ -1,0 +1,135 @@
+---
+permalink: "{{ siteConfig.feed.stylesheet.url }}"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:atom="http://www.w3.org/2005/Atom">
+  <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+  <xsl:template match="/atom:feed">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <title><xsl:value-of select="atom:title"/> {{ phrases.feed }}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <style type="text/css">
+          * {
+            box-sizing: border-box;
+            color: #181B1A;
+          }
+          a {
+            color: {{ siteConfig.feed.stylesheet.baseColor }};
+            font-weight: bold;
+          }
+          a:hover,
+          a:focus {
+            text-decoration: underline;
+          }
+          body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+          }
+          .logo {
+            line-height: 1;
+          }
+          
+          .logo img {
+            margin-right: 16px;
+            max-height: 40px;
+          }
+          aside {
+            padding: 16px;
+            background: lightgray;
+            text-align: center;
+          }
+          .summary,
+          article,
+          footer {
+            max-width: 800px;
+            margin: 32px auto;
+          }
+          h1 {
+            font-size: 3rem;
+            font-weight: 300;
+          }
+          .summary p {
+            font-size: 1.25rem;
+            font-weight: 300;
+          }
+          a {
+            text-decoration: none;
+          }
+          article {
+            border-top: lightgray 1px solid;
+          }
+          dt {
+            font-weight: bold;
+          }
+          dt::after {
+            content: ": "
+          }
+
+          dd {
+            margin-top: 5px;
+            margin-left: 0;
+          }
+        </style>
+      </head>
+      <body>
+        <aside>
+          {{ phrases.feed_info[0] }}
+          <a>
+            <xsl:attribute name="href">
+              <xsl:value-of select="atom:link[@rel='self']/@href"/>
+            </xsl:attribute>
+            <xsl:value-of select="atom:link[@rel='self']/@href"/>
+          </a>
+          {{ phrases.feed_info[1] }}
+        </aside>
+        <div>
+          <section class="summary">
+            <h1 class="logo">
+              {% include "partials/header/site-logo.njk" %}
+              <xsl:value-of select="atom:title"/>
+            </h1>
+            <p><xsl:value-of select="atom:subtitle"/></p>
+            <a>
+              <xsl:attribute name="href">
+                <xsl:value-of select="atom:link[@rel='alternate']/@href"/>
+              </xsl:attribute>
+              {{ phrases.visit_website }} &#x2192;
+            </a>
+          </section>
+        </div>
+        <xsl:for-each select="atom:entry">
+          <xsl:sort select="atom:updated" order="descending"/>
+          <article>
+            <h2>
+              <a target="_blank">
+                <xsl:attribute name="href">
+                  <xsl:value-of select="atom:id"/>
+                </xsl:attribute>
+                <xsl:value-of select="atom:title"/>
+              </a>
+            </h2>
+            <div>
+              <xsl:value-of select="atom:content" disable-output-escaping="yes" />
+            </div>
+            <dl>
+              <dt>{{ phrases.published }}</dt>
+              <dd><xsl:value-of select="atom:updated" /></dd>
+              <xsl:if test="atom:category">
+                <dt>{{ phrases.tags }}</dt>
+                <xsl:for-each select="atom:category">
+                <dd>
+                  <xsl:value-of select="@term"/>
+                </dd>
+                </xsl:for-each>
+              </xsl:if>
+            </dl>
+          </article>
+        </xsl:for-each>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,14 @@
+{%- set site = siteConfig.site -%}
+{%- set feed = siteConfig.feed -%}
+{%- set author = siteConfig.author -%}
+<title>{{ site.title }}</title>
+<subtitle>{{ site.description }}</subtitle>
+{%- set absoluteUrl -%}{{ outputFilePath | alwaysProductionUrl }}{%- endset -%}
+<link href="{{ absoluteUrl }}" rel="self"/>
+<link href="{{ '/' | alwaysProductionUrl }}" rel="alternate" />
+<updated>{{ collections.publishedPosts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+<id>{{ '/' | alwaysProductionUrl }}</id>
+<author>
+  <name>{{ author.name }}</name>
+  <uri>{{ author.url }}</uri>
+</author>
