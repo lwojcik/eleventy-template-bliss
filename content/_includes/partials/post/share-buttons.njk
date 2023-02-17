@@ -1,0 +1,39 @@
+{%- set url -%}{{ title|slugify|alwaysProductionUrl }}/{%- endset -%}
+{%- set title -%}{{ title|safe }}{%- endset -%}
+<div class="share-buttons">
+  <p>{{ phrases.share_this_article }}:</p>
+  {% include "partials/post/mastodon-share-dialog.njk" %}
+  <ul>
+    <li>
+      <div data-tooltip="{{ phrases.share_on }} Mastodon - {{ phrases.opens_prompt }}" class="mastodon" tabindex="0">
+        {% include "svg/share-buttons/mastodon.svg" %}
+      </div>
+    </li>
+    <li>
+      <a target="_blank" rel="noopener noreferrer" data-tooltip="{{ phrases.share_on }} Twitter - {{ phrases.opens_new_tab }}" rel="noopener noreferrer" href="https://twitter.com/intent/tweet/?text={{ title }}&amp;url={{ url }}" class="twitter">
+        {% include "svg/share-buttons/twitter.svg" %}
+      </a>
+    </li>
+    <li>
+      <a target="_blank" rel="noopener noreferrer" data-tooltip="{{ phrases.share_on }} Linkedin - {{ phrases.opens_new_tab }}" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url={{ url }}" class="linkedin">
+        {% include "svg/share-buttons/linkedin.svg" %}
+      </a>
+    </li>
+    <li>
+      <a target="_blank" rel="noopener noreferrer" data-tooltip="{{ phrases.share_on }} Facebook - {{ phrases.opens_new_tab }}" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u={{ url }}" class="facebook">
+        {% include "svg/share-buttons/facebook.svg" %}
+      </a>
+    </li>
+    <li>
+      <a target="_blank" rel="noopener noreferrer" data-tooltip="{{ phrases.share_on }} Hacker News - {{ phrases.opens_new_tab }}" rel="noopener noreferrer" href="https://news.ycombinator.com/submitlink?u={{ url }}&amp;t={{ title }}" class="hackernews">
+        {% include "svg/share-buttons/hn.svg" %}
+      </a>
+    </li>
+
+    <li>
+      <div class="clipboard" rel="noopener noreferrer" data-tooltip="{{ phrases.copy_to_clipboard }}" tabindex="0">
+        {% include "svg/share-buttons/clipboard.svg" %}
+      </div>
+    </li>
+  </ul>
+</div>

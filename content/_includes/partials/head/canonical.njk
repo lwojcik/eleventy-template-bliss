@@ -1,0 +1,13 @@
+{%- set canonical -%}
+  {%- if customPermalink -%}
+    {{ customPermalink }}
+  {%- elif tag -%}
+    {%- set tagUrl -%}{{ siteConfig.tags.pageUrlPrefix }}/{{ tag.title | slugify }}/{%- endset -%}
+    {{ tagUrl }}
+  {%- elif title -%}
+    {{ title | slugify }}
+  {%- else -%}
+    /
+  {%- endif -%}
+{%- endset -%}
+<link rel="canonical" href="{{ canonical | alwaysProductionUrl }}" />

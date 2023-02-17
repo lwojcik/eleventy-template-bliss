@@ -1,0 +1,38 @@
+---
+eleventyExcludeFromCollections: true
+permalink: /manifest.json
+---
+{%- set site = siteConfig.site -%}
+{%- set manifestJson = siteConfig.manifestJson -%}
+{
+  "name": "{{ site.title }}",
+  "lang": "{{ manifestJson.language }}",
+  "short_name": "{{ site.title }}",
+  "description": "{{ site.description }}",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "{{ manifestJson.themeColor }}",
+  "background_color": "{{ manifestJson.backgroundColor }}",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "{{ siteConfig.icons.i192 | alwaysProductionUrl }}",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "{{ siteConfig.icons.i512 | alwaysProductionUrl }}",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "{{ siteConfig.icons.svg | alwaysProductionUrl }}",
+      "sizes": "48x48 72x72 96x96 128x128 150x150 256x256 512x512 1024x1024",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{% set defaultLanguage = siteConfig.site.language %}
+<div class="author-info">
+{% if language === defaultLanguage %}
+  <p>{{ phrases.originally_published }} <time>{{ date|readableFullDate }}</time> {{ phrases.by }} <a href="/about/">{{ siteConfig.author.name }}</a></p>
+{% else %}
+  <p lang="{{ language }}">{{ phrases.pl.originally_published }}: <time>{{ date|numericalDate }}</time> {{ phrases.author }} {{ phrases.meta_separator }} {{ phrases.pl.author }}: <a href="/about/" hreflang="{{ defaultLanguage }}">{{ siteConfig.author.name }}</a></p>
+{% endif %}
+</div>

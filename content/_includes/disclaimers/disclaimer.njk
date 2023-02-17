@@ -1,0 +1,11 @@
+{% if disclaimer %}
+<div class="notice">
+  <p {% if disclaimer.language %}lang="{{ disclaimer.language }}"{% endif %}>
+  {% if disclaimer.url %}
+    {% if disclaimer.language %}{% endif %} <a href="{{ disclaimer.url }}" {% if disclaimer.language %}lang="{{ disclaimer.language }}"{% endif %} {% if disclaimer.hreflang %}hreflang="{{ disclaimer.hreflang }}"{% endif %}>{{ disclaimer.text }}</a> &rarr;
+  {% else %}
+    <b>{{ phrases.disclaimer }}:</b> {{ disclaimer.text }}
+  {% endif %}
+  </p>
+</div>
+{% endif %}

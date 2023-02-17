@@ -1,0 +1,19 @@
+{%- set site = siteConfig.site -%}
+{%- set author = siteConfig.author -%}
+{%- set json = siteConfig.json -%}
+{%- set icons = siteConfig.icons -%}
+"version": "https://jsonfeed.org/version/1.1",
+"title": "{{ site.title }}",
+"home_page_url": "{{ '/' | alwaysProductionUrl }}",
+"feed_url": "{{ feedUrl }}",
+"description": "{{ site.description }}",
+"user_comment": "{{ site.title }} {{ userComment }}",
+"authors": [
+  {
+    "name": "{{ author.name }}",
+    "url": "{{ author.url }}"
+  }
+],
+"language": "{{ site.language }}",
+"icon" : "{{ icons.i192 | alwaysProductionUrl }}",
+"favicon" : "{{ icons.i512 | alwaysProductionUrl }}",

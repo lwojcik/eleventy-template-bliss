@@ -1,0 +1,4 @@
+{%- set title = siteConfig.site.title -%}
+{%- set json = siteConfig.json -%}
+<link rel="alternate" type="application/json" title="{{ title }} {{ json.excerpts.title }}" href="{{ json.excerpts.path }}">
+<link rel="alternate" type="application/json" title="{{ title }} {{ json.full.title }}" href="{{ json.full.path }}">

@@ -1,0 +1,1 @@
+{%- if post.data.translation and post.data.original -%}<p><b>{{ phrases.disclaimer }}:</b> {{ phrases.this_is_translation_of }} <strong>{{ post.data.original.title }}</strong> by {{ post.data.original.author.name }} - {{ post.data.original.url }}</p>{%- endif -%}

@@ -1,0 +1,25 @@
+.bottom-meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 5rem 0;
+
+  & > div {
+    width: 45%;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    margin: 0;
+
+    & > div {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@import 'tags';
+@import 'share_buttons';
+@import 'mastodon_share_dialog';

@@ -1,0 +1,12 @@
+{% if translation and original %}
+{% set author = original.author %}
+<div class="notice">
+  <p lang="pl"><b>{{ phrases.pl.disclaimer }}:</b> {{ phrases.pl.article_is_translation }}</p>
+  <p><b>{{ phrases.disclaimer }}:</b> {{ phrases.article_is_translation }}</p>
+
+  <p class="original" lang="{{ original.language }}">
+    {% emoji "►", "arrow right" %} <a href="{{ original.url }}">{{ original.title }}</a>, 
+    {{ author.name }}
+  </p>
+</div>
+{% endif %}

@@ -1,0 +1,38 @@
+.scroll-up-arrow {
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  width: 4rem;
+  height: 4rem;
+  right: 1.5rem;
+  bottom: -4rem;
+  opacity: 1;
+  padding: 1rem;
+  z-index: 9;
+  box-shadow: 0 0.125rem 0.25rem 0 var(--dark-background-color);
+  background-color: var(--scroll-up-arrow-background-color);
+  @include transition(bottom);
+
+  &:hover {
+    background-color: var(--scroll-up-arrow-hover-background-color);
+  }
+
+  &.visible {
+    display: block;
+    bottom: 1.5rem;
+  }
+
+  svg {
+    width: 2rem;
+
+    .fillable {
+      fill: var(--background-color);
+    }
+  }
+}
+
+@include noJS {
+  .scroll-up-arrow {
+    display: none;
+  }
+}

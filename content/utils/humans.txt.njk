@@ -1,0 +1,26 @@
+---
+date: Last Modified
+eleventyExcludeFromCollections: true
+permalink: /humans.txt
+---
+
+{%- set author = siteConfig.author -%}
+{%- set site = siteConfig.site -%}
+
+/* AUTHOR */
+	Name: {{ author.name | removeSomePolishCharacters }}
+	Contact: {{ author.contact }}
+	Resume: {{ author.resume }}
+	Fediverse: {{ author.fediverse[0].url }}
+	Languages: {{ author.languages }}
+	From: {{ author.location }}
+
+/* SITE */
+	Version: {{ site.version }}
+	Languages: {{ site.languages }}
+	Doctype: {{ site.doctype }}
+	Generator: {{ site.generator }}
+	IDE: {{ site.ide }}
+
+/* WHAT IS THIS? */
+	More information: https://humanstxt.org/

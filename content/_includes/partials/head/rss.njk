@@ -1,0 +1,4 @@
+{%- set title = siteConfig.site.title -%}
+{%- set feed = siteConfig.feed -%}
+<link rel="alternate" type="application/rss+xml"  title="{{ title }} {{ feed.excerpts.title }}" href="{{ feed.excerpts.path }}" />
+<link rel="alternate" type="application/rss+xml"  title="{{ title }} {{ feed.full.title }}" href="{{ feed.full.path }}" />

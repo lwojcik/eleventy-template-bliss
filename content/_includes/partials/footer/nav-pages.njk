@@ -1,0 +1,16 @@
+{%- set navPages = collections.all | eleventyNavigation -%}
+<ul>
+{% for item in navPages %}
+  <li{% if item.url === page.url %} class="active" aria-current="page"{% endif %}>
+    {% if item.language and item.language !== defaultLanguage %}
+    <a href="{{ item.url }}" hreflang="{{ item.language }}" {% if item.language and item.language !== defaultLanguage %}lang={{ item.language }}{% endif %}>
+      <span>{{ item.key }} {% if item.language-%}{% include "svg/translation.svg" %}{% endif %}</span>
+    </a>
+    {% else %}
+    <a href="{{ item.url }}">
+      <span>{{ item.key }}</span>
+    </a>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>

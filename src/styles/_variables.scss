@@ -1,0 +1,177 @@
+// Base values
+
+$baseSize: 16px;
+
+// Base colors
+
+$baseHue: 150;
+
+$baseColor: hsl($baseHue, 42%, 30%);
+$white: lighten($baseColor, 68%);
+$black: hsl($baseHue, 5%, 10%);
+
+// Fonts
+
+$serifFontFamily: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+$sansSerifFontFamily: PT Sans, ui-sans-serif, system-ui, -apple-system,
+  BlinkMacSystemFont, Segoe UI, Roboto, SF Pro, Helvetica, Arial, Noto Sans,
+  sans-serif;
+$arialFamily: Arial, Helvetica, sans-serif;
+$emojiFontFamily: Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+  Noto Color Emoji;
+
+// Spacings
+
+$spacing: 1rem;
+$mainBreakpoint: (48 * $baseSize) - 1px;
+$mediumBreakpoint: 36rem;
+$menuBreakpoint: $mainBreakpoint + (6 * $baseSize);
+$footerBreakpoint: 32rem;
+
+// Timings
+
+$defaultTransitionTime: 0.1s;
+$longTransitionTime: 0.2s;
+
+// Common CSS variables
+
+:root {
+  --base-font-size: #{$baseSize};
+  --spacing: #{$spacing};
+  --text-font-family: #{$serifFontFamily};
+  --arial-font-family: #{$arialFamily};
+  --emoji-font-family: #{$emojiFontFamily};
+  --heading-font-family: #{$sansSerifFontFamily};
+  --read-more-hover-color: #{$white};
+  --base-color: #{$baseColor};
+  --default-transition-time: #{$defaultTransitionTime};
+  --long-transition-time: #{$longTransitionTime};
+}
+
+// Light mode colors
+
+$lightBackgroundColor: $white;
+$lightTextColor: $black;
+$lightLinkColor: darken($baseColor, 5%);
+$lightLinkHoverColor: lighten($lightLinkColor, 18%);
+$lightPostMetaColor: lighten($black, 50%);
+$lightTopMetaColor: lighten($black, 40%);
+$lightBottomMetaColor: $lightTopMetaColor;
+$lightNoticeBorderColor: $baseColor;
+$lightNoticeBackgroundColor: lighten($baseColor, 64%);
+$lightCodeBackgroundColor: lighten($baseColor, 64%);
+$lightMarkBackgroundColor: lighten($baseColor, 55%);
+$lightMarkColor: $black;
+$lightThemeSwitcherColor: $lightLinkColor;
+$lightMobileMenuBackgroundColor: $lightBackgroundColor;
+$lightMobileMenuSeparatorColor: darken($white, 8%);
+$lightScrollUpArrowBackgroundColor: lighten($lightLinkColor, 10%);
+$lightScrollUpArrowHoverBackgroundColor: darken(
+  $lightScrollUpArrowBackgroundColor,
+  7%
+);
+$lightPaginationColor: $lightTextColor;
+$lightPaginationFocusBackgroundColor: $lightNoticeBackgroundColor;
+$lightPaginationInactiveColor: lighten($lightPostMetaColor, 25%);
+$lightPaginationJumpButtonBackgroundColor: $lightPaginationInactiveColor;
+$lightFooterSeparatorColor: lighten($black, 76%);
+
+@mixin lightModeColors {
+  --background-color: #{$lightBackgroundColor};
+  --text-color: #{$lightTextColor};
+  --link-color: #{$lightLinkColor};
+  --link-hover-color: #{$lightLinkHoverColor};
+  --post-meta-color: #{$lightPostMetaColor};
+  --top-meta-color: #{$lightTopMetaColor};
+  --bottom-meta-color: #{$lightBottomMetaColor};
+  --notice-border-color: #{$lightNoticeBorderColor};
+  --notice-background-color: #{$lightNoticeBackgroundColor};
+  --code-background-color: #{$lightCodeBackgroundColor};
+  --mark-background-color: #{$lightMarkBackgroundColor};
+  --mark-color: #{$lightMarkColor};
+  --theme-switcher-color: #{$lightThemeSwitcherColor};
+  --mobile-menu-background-color: #{$lightMobileMenuBackgroundColor};
+  --mobile-menu-separator-color: #{$lightMobileMenuSeparatorColor};
+  --scroll-up-arrow-background-color: #{$lightScrollUpArrowBackgroundColor};
+  --scroll-up-arrow-hover-background-color: #{$lightScrollUpArrowHoverBackgroundColor};
+  --pagination-page-number-input-text-color: #{$lightTextColor};
+  --pagination-page-number-input-background-color: #{$lightBackgroundColor};
+  --pagination-color: #{$lightPaginationColor};
+  --pagination-focus-background-color: #{$lightPaginationFocusBackgroundColor};
+  --pagination-inactive-color: #{$lightPaginationInactiveColor};
+  --pagination-jump-button-background-color: #{$lightPaginationJumpButtonBackgroundColor};
+  --footer-separator-color: #{$lightFooterSeparatorColor};
+}
+
+:root,
+html:not(.dark) {
+  @include lightModeColors;
+}
+
+// Dark mode colors
+
+$darkBackgroundColor: $black;
+$darkTextColor: hsl($baseHue, 5%, 70%);
+$darkLinkColor: hsl($baseHue, 60%, 50%);
+$darkLinkHoverColor: darken($darkLinkColor, 10%);
+$darkPostMetaColor: darken($darkTextColor, 30%);
+$darkTopMetaColor: darken($darkTextColor, 10%);
+$darkBottomMetaColor: $darkTopMetaColor;
+$darkNoticeBorderColor: darken($baseColor, 2%);
+$darkNoticeBackgroundColor: lighten($black, 3%);
+$darkCodeBackgroundColor: lighten($black, 3%);
+$darkMarkBackgroundColor: darken($darkLinkHoverColor, 25%);
+$darkMarkColor: lighten($darkTextColor, 0%);
+$darkThemeSwitcherColor: $darkLinkColor;
+$darkMobileMenuBackgroundColor: $darkBackgroundColor;
+$darkMobileMenuSeparatorColor: lighten($black, 5%);
+$darkScrollUpArrowBackgroundColor: darken($darkLinkColor, 10%);
+$darkScrollUpArrowHoverBackgroundColor: darken(
+  $darkScrollUpArrowBackgroundColor,
+  7%
+);
+$darkPaginationPageNumberInputTextColor: $darkTextColor;
+$darkPaginationColor: lighten($black, 55%);
+$darkPaginationFocusBackgroundColor: $darkNoticeBackgroundColor;
+$darkPaginationInactiveColor: darken($darkPostMetaColor, 18%);
+$darkPaginationJumpButtonBackgroundColor: $darkPaginationInactiveColor;
+$darkFooterSeparatorColor: lighten($black, 10%);
+
+@mixin darkModeColors {
+  --background-color: #{$darkBackgroundColor};
+  --text-color: #{$darkTextColor};
+  --link-color: #{$darkLinkColor};
+  --link-hover-color: #{$darkLinkHoverColor};
+  --post-meta-color: #{$darkPostMetaColor};
+  --top-meta-color: #{$darkTopMetaColor};
+  --bottom-meta-color: #{$darkBottomMetaColor};
+  --notice-border-color: #{$darkNoticeBorderColor};
+  --notice-background-color: #{$darkNoticeBackgroundColor};
+  --code-background-color: #{$darkCodeBackgroundColor};
+  --mark-background-color: #{$darkMarkBackgroundColor};
+  --mark-color: #{$darkMarkColor};
+  --theme-switcher-color: #{$darkThemeSwitcherColor};
+  --mobile-menu-background-color: #{$darkMobileMenuBackgroundColor};
+  --mobile-menu-separator-color: #{$darkMobileMenuSeparatorColor};
+  --scroll-up-arrow-background-color: #{$darkScrollUpArrowBackgroundColor};
+  --scroll-up-arrow-hover-background-color: #{$darkScrollUpArrowHoverBackgroundColor};
+  --pagination-color: #{$darkPaginationColor};
+  --pagination-page-number-input-text-color: #{$darkTextColor};
+  --pagination-page-number-input-background-color: #{$darkBackgroundColor};
+  --pagination-focus-background-color: #{$darkPaginationFocusBackgroundColor};
+  --pagination-inactive-color: #{$darkPaginationInactiveColor};
+  --pagination-jump-button-background-color: #{$darkPaginationJumpButtonBackgroundColor};
+  --footer-separator-color: #{$darkFooterSeparatorColor};
+}
+
+html.dark {
+  @include darkModeColors;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  html:not(.light),
+  html.dark {
+    @include darkModeColors;
+  }
+}

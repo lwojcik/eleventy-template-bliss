@@ -1,0 +1,19 @@
+{%- set wordCount -%}{{ post.templateContent | striptags | wordcount }}{%- endset -%}
+{%- set readingTime -%}{{ wordCount | readingTimeMin }}{%- endset -%}
+{%- set postDate -%}{{ post.data.date|readableDate }}{%- endset -%}
+{%- set defaultLanguage = siteConfig.site.language -%}
+<a href="{{ post.url }}" {% if post.data.language !== defaultLanguage %}hreflang="{{ post.data.language }}"{% endif %}>
+  <article {% if post.data.language !== defaultLanguage %}lang="{{ post.data.language }}"{% endif %}>
+    <header>
+      <h2 class="post-title">{{ post.data.title }}</h2> {% if post.data.language !== defaultLanguage %}{% include "svg/translation.svg" %}{% endif %}
+    </header>
+    <div class="excerpt"> 
+      {% excerpt post %}
+    </div>
+    <div class="post-meta">
+        <time>{{ postDate }}</time>
+        <span class="separator">{{ phrases.meta_separator }}</span>
+        <span class="reading-time" title="{{ wordCount }} {{ phrases.words }}">{{ readingTime }} {{ phrases.min }} {{ phrases.read }}</span>        
+    </div>
+  </article>
+</a>

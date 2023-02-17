@@ -1,0 +1,27 @@
+---
+title: Po polsku
+description: Artykuły polskojęzyczne, głównie tłumaczenia zagranicznych artykułów wartych uwagi.
+permalink: /pl/
+language: pl
+eleventyNavigation:
+  key: Po polsku
+  order: 5
+  language: pl
+---
+
+<div class="notice">
+  <p><strong lang="en">{{ siteConfig.site.title }}</strong> jest z założenia projektem anglojęzycznym. Okazjonalnie jednak tłumaczę i publikuję artykuły po polsku - zarówno własne, jak i innych osób, których punkt widzenia cenię i chcę się nim dzielić z polskojęzycznymi przyjaciółmi.</p>
+  <p>Listę wszystkich polskojęzycznych tekstów znajdziesz poniżej.</p>
+</div>
+
+<ul>
+{% for post in collections.publishedPolishPosts %}
+{%- set url = post.url -%}
+{%- set title = post.data.title -%}
+{%- set dateFormat = siteConfig.dateFormats.numerical -%}
+{%- set date -%}{{ post.data.date|numericalDate }}{%- endset -%}
+  <li>
+    <a href="{{ url }}">{{ title }}</a> <time>{{ date }}</time>
+  </li>
+{% endfor %}
+</ul>

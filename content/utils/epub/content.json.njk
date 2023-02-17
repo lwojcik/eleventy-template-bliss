@@ -1,0 +1,21 @@
+---
+permalink: /epub/content.json
+---
+{%- set license -%}{% include "offline-partials/license.njk" %}{% endset %}
+{%- set legal -%}{% include "offline-partials/legal.njk" %}{% endset %}
+[
+  {
+    "title": "License",
+    "data": "{{ license|filterHtmlForEpub|safe }}"
+  },
+  {
+    "title": "Legal",
+    "data": "{{ legal|filterHtmlForEpub|safe }}"
+  },
+{%- for post in collections.publishedEnglishPosts|reverse %}
+  {
+    "title": "{{ post.data.title|safe }}",
+    "data": "{%- include "offline-partials/disclaimer.njk" -%}{%- include "offline-partials/translation.njk" -%}{{ post.templateContent|processImagesForEpub|productionLinks|filterHtmlForEpub|safe }}"
+  }{% if not loop.last %},{% endif %}
+{%- endfor %}
+]

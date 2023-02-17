@@ -1,0 +1,14 @@
+---
+layout: base
+---
+
+{%- set defaultLanguage = siteConfig.site.language -%}
+
+<article{% if language != defaultLanguage %} lang="{{ language }}"{% endif %}>
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+
+  {{ content | safe }}
+
+</article>

@@ -1,0 +1,17 @@
+---
+title: Read offline
+description: Offbeat Bits can be read in various different formats, even offline. Download EPUB or PDF file with all published articles.
+customPermalink: /offline/
+eleventyNavigation:
+  key: Read offline
+  order: 2
+---
+
+<p>If you like {{ siteConfig.site.title }} and you feel like binge-reading it, I got you covered.</p>
+<p>Download the whole archive and read it on your favorite ebook reader or a mobile device, even offline.</p>
+<p>Note that offline files contain only English articles I authored myself, i.e. excluding translations of articles written by other people.</p>
+<p>Last updated: {{ collections.publishedPosts | getNewestCollectionItemDate | readableDate }}</p>
+<ul class="read-offline-list">
+  <li><a href="/download/offbeatbits.epub" download>{% include "svg/epub.svg" %} <span>Download ebook version</span></a></li>
+  <li><a href="/download/offbeatbits.pdf" download>{% include "svg/pdf.svg" %} <span>Download PDF file</span></a></li>
+</ul>

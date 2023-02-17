@@ -1,0 +1,13 @@
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+@include belowMenuBreakpoint {
+  .main-nav {
+    padding: var(--spacing);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}

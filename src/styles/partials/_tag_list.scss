@@ -1,0 +1,30 @@
+.tag-list {
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    a {
+      text-decoration: none;
+      border: 2px solid var(--link-color);
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      @include transition(background);
+
+      &:hover,
+      &:focus {
+        background: var(--link-color);
+        color: var(--background-color);
+      }
+
+      .count {
+        font-size: 1rem;
+        color: var(--post-meta-color);
+        font-family: var(--arial-font-family);
+      }
+    }
+  }
+}
