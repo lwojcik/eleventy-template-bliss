@@ -141,6 +141,6 @@ module.exports = {
   },
   pdf: {
     format: 'A4',
-    fileName: 'offbeatbits.pdf',
+    fileName: 'blisstemplate.pdf',
   },
 };
