@@ -1,1 +1,1 @@
-# [Blog is HERE](https://offbeatbits.com/)
+# eleventy-bliss-template

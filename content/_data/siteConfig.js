@@ -1,6 +1,6 @@
 module.exports = {
   site: {
-    title: 'Offbeat Bits',
+    title: 'Eleventy Bliss',
     description:
       'Essays on life, technology, universe and everything in between. Personal writing by Łukasz Wójcik',
     url: 'https://offbeatbits.com/',
@@ -19,9 +19,9 @@ module.exports = {
     codeLicense: {
       name: 'MIT License',
       shorthand: 'MIT',
-      url: 'https://github.com/offbeatbits/offbeatbits/blob/main/LICENSE',
+      url: 'https://github.com/offbeatbits/eleventy-bliss-template/blob/main/LICENSE',
     },
-    github: 'https://github.com/offbeatbits/offbeatbits',
+    github: 'https://github.com/offbeatbits/eleventy-bliss-template',
   },
   author: {
     name: 'Łukasz Wójcik',
@@ -89,7 +89,7 @@ module.exports = {
     },
   },
   twtxt: {
-    nick: 'OffbeatBits',
+    nick: 'eleventyBlissTemplate',
     path: '/twtxt.txt',
     avatar: '/images/twtxt-avatar.png',
     separator: ' - ',
@@ -134,7 +134,7 @@ module.exports = {
     backgroundColor: '#255b40',
   },
   epub: {
-    title: 'Offbeat Bits',
+    title: 'Eleventy Bliss Template',
     author: 'Łukasz Wójcik',
     cover: '_site/icon-512.png',
     fileName: 'offbeatbits.epub',
