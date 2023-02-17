@@ -25,7 +25,3 @@
 /manifest.json
   Content-Type: application/manifest+json
   cache-control: max-age=31536000,public,immutable
-
-/api/*.json
-  Content-Type: application/json
-  cache-control: max-age=3600,public

@@ -4,9 +4,9 @@ $baseSize: 16px;
 
 // Base colors
 
-$baseHue: 150;
+$baseHue: 230;
 
-$baseColor: hsl($baseHue, 42%, 30%);
+$baseColor: hsl($baseHue, 42%, 50%);
 $white: lighten($baseColor, 68%);
 $black: hsl($baseHue, 5%, 10%);
 
@@ -112,7 +112,7 @@ html:not(.dark) {
 
 $darkBackgroundColor: $black;
 $darkTextColor: hsl($baseHue, 5%, 70%);
-$darkLinkColor: hsl($baseHue, 60%, 50%);
+$darkLinkColor: hsl($baseHue, 60%, 75%);
 $darkLinkHoverColor: darken($darkLinkColor, 10%);
 $darkPostMetaColor: darken($darkTextColor, 30%);
 $darkTopMetaColor: darken($darkTextColor, 10%);

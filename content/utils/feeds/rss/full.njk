@@ -13,7 +13,7 @@ eleventyExcludeFromCollections: true
 {%- set content = post.templateContent -%}
 <entry>
 {%- include "partials/feeds/rss/entry-meta.njk" -%}
-<content type="html">{%- include "partials/feeds/disclaimer.njk" -%}{%- include "partials/feeds/translation.njk" -%}{{ content | htmlToAbsoluteUrls(absolutePostUrl) }}{%- include "partials/feeds/originally-published.njk" -%}</content>
+<content type="html">{%- include "partials/feeds/disclaimer.njk" -%}{{ content | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
 </entry>
 {%- endfor -%}
 </feed>

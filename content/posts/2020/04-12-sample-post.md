@@ -6,6 +6,8 @@ tags:
   - hello world
   - sample post
   - test
+  - sample post 1
+  - tag with pagination
 ---
 
 This is the first paragraph of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacus magna, lobortis sit amet mauris sed, fringilla scelerisque risus. Suspendisse sem nibh, pretium id ante sed, porttitor malesuada nibh. Vivamus pretium nunc nec pretium placerat.

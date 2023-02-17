@@ -2,17 +2,10 @@ module.exports = {
   main_page: 'Main page',
   skip_to_main_content: 'Skip to main content',
   disclaimer: 'Disclaimer',
-  article_is_translation:
-    'This is a Polish translation of the article linked below, written with consent of its original author.',
-  this_is_translation_of:
-    'This is a Polish translation of the following article, written with consent of its original author:',
   keep_reading: 'Keep reading on',
   originally_published: 'Originally published on',
   by: 'by',
   license: 'License',
-  content_license: 'Content license',
-  code_license: 'Code license',
-  brought_to_you_from: 'Brought to you with love from',
   published: 'Published',
   page: 'Page',
   go_to_page: 'Go to page',
@@ -54,15 +47,4 @@ module.exports = {
   sample_instance: 'mastodon.social',
   close_window: 'Close this window',
   share: 'Share',
-  pl: {
-    disclaimer: 'Uwaga',
-    article_is_translation:
-      'To jest tłumaczenie artykułu napisane za zgodą osoby, która opublikowała oryginał. Link do oryginalnej treści znajdziesz poniżej.',
-    published: 'Opublikowano',
-    min: 'min.',
-    read: 'czas lektury: ok.',
-    words: 'Liczba słów',
-    originally_published: 'Data pierwszej publikacji',
-    author: 'Autor',
-  },
 };

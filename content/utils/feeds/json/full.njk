@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
     {%- set absolutePostUrl %}{{ post.url | alwaysProductionUrl }}{% endset -%}
     {
       {%- include "partials/feeds/json/item-meta.njk" -%}
-      "content_html": "{%- include "partials/feeds/disclaimer.njk" -%}{%- include "partials/feeds/translation.njk" -%}{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}{%- include "partials/feeds/originally-published.njk" -%}"
+      "content_html": "{%- include "partials/feeds/disclaimer.njk" -%}{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}"
     }
     {%- if not loop.last -%}
     ,

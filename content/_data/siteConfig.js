@@ -11,10 +11,7 @@ module.exports = {
   },
   author: {
     name: 'John Doe',
-    url: 'https://lukaszwojcik.net/',
-    contact: 'https://lukaszwojcik.net/contact/',
-    postal: 'https://lukem.net/contact/',
-    resume: 'https://lukaszwojcik.net/resume/',
+    url: 'https://eleventy-bliss.vercel.app/',
     fediverse: [
       {
         username: 'JohnMastodon',

@@ -1,4 +1,4 @@
 <title>{{ post.data.title }}</title>
-<link{% if post.data.language !== siteConfig.site.language %} hreflang="{{ post.data.language }}"{% endif %} href="{{ absolutePostUrl }}"/>
+<link href="{{ absolutePostUrl }}"/>
 <updated>{{ post.date | dateToRfc3339 }}</updated>
 <id>{{ absolutePostUrl }}</id>
