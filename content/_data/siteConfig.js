@@ -78,16 +78,16 @@ module.exports = {
   },
   metaPages: [
     {
-      permalink: '/privacy/',
-      title: 'Privacy policy',
+      permalink: 'https://example.org/link-1/',
+      title: 'Example link 1',
     },
     {
-      permalink: '/colophon/',
-      title: 'Colophon',
+      permalink: 'https://example.org/link-2/',
+      title: 'Example link 2',
     },
     {
-      permalink: 'https://www.lukaszwojcik.net/contact/',
-      title: 'Contact author',
+      permalink: 'https://example.org/link-3/',
+      title: 'Example link 3',
     },
   ],
   opengraph: {
@@ -104,7 +104,7 @@ module.exports = {
   },
   manifestJson: {
     language: 'en-US',
-    themeColor: '#255b40',
-    backgroundColor: '#255b40',
+    themeColor: '#1773cf',
+    backgroundColor: '#1773cf',
   },
 };
