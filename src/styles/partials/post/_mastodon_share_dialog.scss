@@ -50,10 +50,6 @@
     }
   }
 
-  .mastodon-share-form {
-    margin: 1rem 0 1.5rem;
-  }
-
   .instance-url-input {
     height: 1.875rem;
     line-height: 1;
@@ -61,6 +57,7 @@
     border: 2px solid var(--link-color);
     background: var(--pagination-page-number-input-background-color);
     color: var(--pagination-page-number-input-text-color);
+    margin: 1rem 0 0;
     padding: 0.25rem 0.625rem;
     border-radius: 0.75rem;
     appearance: textfield;
@@ -91,9 +88,9 @@
     font-family: var(--arial-font-family);
     border-radius: 1.25rem;
     line-height: 1.15;
+    margin: 1rem 0 2rem;
     padding: 0 1rem;
     height: 1.875rem;
-    margin-left: 0.5rem;
     background: var(--link-color);
     color: var(--background-color);
     cursor: pointer;
