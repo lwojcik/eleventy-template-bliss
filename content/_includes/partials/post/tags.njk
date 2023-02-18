@@ -1,3 +1,4 @@
+{% if siteConfig.tags.displayOnPostPage %}
 <div class="post-tags">
 {% if tags|filterExcludedTags %}
   <p>{{ phrases.tagged_as }}:</p>
@@ -10,3 +11,4 @@
   </ul>
 {% endif %}
 </div>
+{% endif %}

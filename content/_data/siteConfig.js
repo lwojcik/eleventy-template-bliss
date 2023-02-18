@@ -99,6 +99,8 @@ module.exports = {
     image: '/images/share-400x400.jpg',
   },
   tags: {
+    displayOnArchivePage: true,
+    displayOnPostPage: true,
     pageUrlPrefix: 'tag',
     postsPerPage: 10,
   },
@@ -107,4 +109,12 @@ module.exports = {
     themeColor: '#1773cf',
     backgroundColor: '#1773cf',
   },
+  shareButtons: [
+    'mastodon',
+    'twitter',
+    'linkedin',
+    'facebook',
+    'hackernews',
+    'clipboard',
+  ],
 };
