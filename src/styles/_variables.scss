@@ -7,7 +7,7 @@ $baseSize: 16px;
 $baseHue: 210;
 
 $baseColor: hsl($baseHue, 80%, 50%);
-$white: lighten($baseColor, 68%);
+$white: hsl($baseHue, 80%, 97%);
 $black: hsl($baseHue, 5%, 10%);
 
 // Fonts
@@ -53,7 +53,7 @@ $longTransitionTime: 0.2s;
 $lightBackgroundColor: $white;
 $lightTextColor: $black;
 $lightLinkColor: darken($baseColor, 5%);
-$lightLinkHoverColor: lighten($lightLinkColor, 18%);
+$lightLinkHoverColor: lighten($lightLinkColor, 15%);
 $lightPostMetaColor: lighten($black, 50%);
 $lightTopMetaColor: lighten($black, 40%);
 $lightBottomMetaColor: $lightTopMetaColor;
