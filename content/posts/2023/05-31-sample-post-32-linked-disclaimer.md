@@ -1,13 +1,16 @@
 ---
-title: Sample post number 33 (with disclaimer!)
+title: Sample post number 32 (with linked disclaimer!)
 description: Post description that will be visible in HTML meta description.
-date: 2023-06-10
+date: 2023-05-31
 tags:
   - hello world
   - sample post
-  - sample post 33
+  - sample post 32
   - test
   - tag with pagination
+disclaimer:
+  text: This is a disclaimer that links to a different page
+  url: https://example.org/
 ---
 
 This is the first paragraph of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacus magna, lobortis sit amet mauris sed, fringilla scelerisque risus. Suspendisse sem nibh, pretium id ante sed, porttitor malesuada nibh. Vivamus pretium nunc nec pretium placerat.

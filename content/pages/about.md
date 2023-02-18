@@ -1,6 +1,6 @@
 ---
 title: About
-description: I'm Łukasz. Or just Luke. I'm a software engineer from Warsaw, Poland and I never know what to put in this section.
+description: There are many variations of passages of Lorem Ipsum available.
 eleventyNavigation:
   key: About
   order: 4

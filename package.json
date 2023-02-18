@@ -34,7 +34,6 @@
     "@photogabble/eleventy-plugin-tag-normaliser": "^1.0.4",
     "crypto-js": "^4.1.1",
     "eleventy-plugin-emoji": "^1.1.0",
-    "eleventy-plugin-external-links": "^1.1.2",
     "eleventy-plugin-pwa-v2": "^0.0.1",
     "eslint": "^8.32.0",
     "eslint-plugin-import": "^2.27.5",
