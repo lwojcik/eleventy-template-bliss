@@ -47,4 +47,6 @@ module.exports = {
   sample_instance: 'mastodon.social',
   close_window: 'Close this window',
   share: 'Share',
+  powered_by: 'Powered by',
+  template: 'Template',
 };

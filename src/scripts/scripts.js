@@ -332,7 +332,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     mastodonShareForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const href = 'https://offbeatbits.com' + document.location.pathname;
+      const href = window.location.href;
       const title = htmlElement.querySelector('article h1').innerHTML;
       const instance = instanceUrlInput.value;
 

@@ -3,5 +3,7 @@
   
   <div class="copyright">
     &copy; {{ site.startYear }}-{% currentYear %} <a href="{{ author.url }}">{{ author.name }}</a><br>
-    Powered by <a href="https://www.11ty.dev/">Eleventy</a> {{ phrases.meta_separator }} Template: <a href="https://github.com/offbeatbits/eleventy-bliss-template">Bliss</a> by <a href="https://offbeatbits.com/">Offeat Beats</a>
+    {{ phrases.powered_by }} <a href="{{ site.generator.url }}">{{ site.generator.name }}</a>
+    {{ phrases.meta_separator }}
+    {{ phrases.template }}: <a href="{{ site.template.url }}">{{ site.template.name }}</a> {{ phrases.by }} <a href="{{ site.template.credit.url }}">{{ site.template.credit.name }}</a>
   </div>

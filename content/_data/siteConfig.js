@@ -5,9 +5,18 @@ module.exports = {
     url: 'https://eleventy-bliss.vercel.app/',
     language: 'en',
     startYear: 2022,
-    version: 1,
-    generator: 'Eleventy v2.0.0',
-    github: 'https://github.com/offbeatbits/eleventy-bliss-template',
+    generator: {
+      name: 'Eleventy',
+      url: 'https://11ty.dev',
+    },
+    template: {
+      name: 'Bliss',
+      url: 'https://github.com/offbeatbits/eleventy-bliss-template',
+      credit: {
+        name: 'Offbeat Bits',
+        url: 'https://offbeatbits.com',
+      },
+    },
   },
   author: {
     name: 'John Doe',
