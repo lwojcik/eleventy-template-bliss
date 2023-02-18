@@ -26,7 +26,10 @@ module.exports = {
     fullReadable: 'd LLLL yyyy',
   },
   feed: {
-    stylesheet: '/feed.xsl',
+    stylesheet: {
+      url: '/feed.xsl',
+      baseColor: '#1773cf',
+    },
     excerpts: {
       title: 'RSS feed (excerpts)',
       path: '/excerpts.xml',
