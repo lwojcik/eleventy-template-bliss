@@ -9,6 +9,10 @@ footer .container {
   margin-top: 0;
 }
 
+article {
+  overflow: auto;
+}
+
 @include aboveMediumBreakpoint {
   .container {
     max-width: 32rem;

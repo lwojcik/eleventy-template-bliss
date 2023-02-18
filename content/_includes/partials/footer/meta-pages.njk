@@ -1,5 +1,7 @@
+{% if siteConfig.metaPages %}
 <ul>
 {% for item in siteConfig.metaPages %}
   <li><a href="{{ item.permalink }}"><span>{{ item.title }}</span></a></li>
 {% endfor %}
 </ul>
+{% endif %}

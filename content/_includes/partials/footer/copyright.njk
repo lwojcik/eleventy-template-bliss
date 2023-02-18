@@ -1,8 +1,9 @@
   {%- set site = siteConfig.site -%}
   {%- set author = siteConfig.author -%}
-  {%- set license = siteConfig.site.license -%}
-  {%- set codeLicense = siteConfig.site.codeLicense -%}
+  
   <div class="copyright">
-    &copy; {{ site.startYear }}-{% currentYear %} <a href="{{ author.url }}">{{ author.name }}</a>. {{ phrases.brought_to_you_from }} {{ author.location }}.<br>
-    {{ phrases.content_license }}: <a rel="nofollow" href="{{ license.url }}" title="{{ license.name }}">{{ license.shorthand }}</a> &bull; {{ phrases.code_license }}: <a href="{{ codeLicense.url }}">{{ codeLicense.name }}</a>
+    &copy; {{ site.startYear }}-{% currentYear %} <a href="{{ author.url }}">{{ author.name }}</a><br>
+    {{ phrases.powered_by }} <a href="{{ site.generator.url }}">{{ site.generator.name }}</a>
+    {{ phrases.meta_separator }}
+    {{ phrases.template }}: <a href="{{ site.template.url }}">{{ site.template.name }}</a> {{ phrases.by }} <a href="{{ site.template.credit.url }}">{{ site.template.credit.name }}</a>
   </div>

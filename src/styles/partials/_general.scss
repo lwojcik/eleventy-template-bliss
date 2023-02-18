@@ -32,6 +32,13 @@ a {
   }
 }
 
+article a {
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid;
+  transition: color 0.1s ease-in-out;
+}
+
 img,
 video {
   height: auto;

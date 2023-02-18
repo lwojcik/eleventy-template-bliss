@@ -1,5 +1,5 @@
 ---
-permalink: "{{ siteConfig.feed.stylesheet }}"
+permalink: "{{ siteConfig.feed.stylesheet.url }}"
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
@@ -18,17 +18,9 @@ eleventyExcludeFromCollections: true
             color: #181B1A;
           }
           a {
-            color: #255b40;
+            color: {{ siteConfig.feed.stylesheet.baseColor }};
             font-weight: bold;
           }
-
-
-          .logo svg {
-            margin-right: 16px;
-            fill: #255b40;
-            max-height: 40px;
-          }
-
           body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;

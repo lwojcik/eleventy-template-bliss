@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 {%- set outputFilePath = siteConfig.feed.full.path -%}
 {%- set postLimit = siteConfig.feed.full.limit -%}
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="{{ siteConfig.feed.stylesheet }}" type="text/xsl"?>
+<?xml-stylesheet href="{{ siteConfig.feed.stylesheet.url | htmlBaseUrl }}" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 {%- include "partials/feeds/rss/feed-meta.njk" -%}
 {%- for post in collections.publishedPosts|limit(postLimit) -%}
@@ -13,7 +13,7 @@ eleventyExcludeFromCollections: true
 {%- set content = post.templateContent -%}
 <entry>
 {%- include "partials/feeds/rss/entry-meta.njk" -%}
-<content type="html">{%- include "partials/feeds/disclaimer.njk" -%}{%- include "partials/feeds/translation.njk" -%}{{ content | htmlToAbsoluteUrls(absolutePostUrl) }}{%- include "partials/feeds/originally-published.njk" -%}</content>
+<content type="html">{%- include "partials/feeds/disclaimer.njk" -%}{{ content | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
 </entry>
 {%- endfor -%}
 </feed>

@@ -2,13 +2,12 @@
 layout: base
 ---
 
-<article class="single-article"{% if language !== defaultLanguage %} lang="{{ language }}"{% endif %}>
+<article class="single-article">
   <header>
     <h1>{{ title }}</h1>
   </header>
   {% include "partials/post/top-meta.njk" %}
   {% include "disclaimers/disclaimer.njk" %}
-  {% include "disclaimers/translation.njk" %}
   {{ content | safe }}
 </article>
 
