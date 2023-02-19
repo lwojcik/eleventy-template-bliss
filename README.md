@@ -12,7 +12,7 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 - **translation ready** (support for custom language tags + separate file with static phrases)
 - **manifest file** for PWA
 - **HTML, JS, JSON, CSS** optimizations
-- **RSS, JSON, Twtxt.txt** feeds
+- **RSS, JSON, Twtxt.txt** feeds + JSON-LD data
 - **accessibility** features
 - **HSL color palette** and CSS variables for quick personalization
 - easy to modify **modular CSS** augmented with SASS
