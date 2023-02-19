@@ -180,7 +180,8 @@ module.exports = {
       // in browser
       url: '/feed.xsl',
       // Color of the links on the site. Since XSLT stylesheet is a separate
-      // entity from the rest of site styling, it has to be specified manually
+      // entity from the rest of the site styling, it has to be
+      // specified manually
       baseColor: '#1773cf',
     },
     // Settings for RSS feed displaying post excerpts
