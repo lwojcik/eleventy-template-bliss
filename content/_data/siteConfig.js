@@ -12,7 +12,7 @@ module.exports = {
     },
     template: {
       name: 'Bliss',
-      url: 'https://github.com/offbeatbits/eleventy-bliss-template',
+      url: 'https://github.com/offbeatbits/eleventy-template-bliss',
       credit: {
         name: 'Offbeat Bits',
         url: 'https://offbeatbits.com',
