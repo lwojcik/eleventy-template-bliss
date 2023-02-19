@@ -54,6 +54,26 @@ blockquote {
   letter-spacing: 0.01rem;
 }
 
+strong,
+b {
+  font-weight: bold;
+  font-family: var(--serif-bold-font-family);
+}
+
+i,
+em {
+  font-style: italic;
+  font-family: var(--serif-italic-font-family);
+}
+
+strong > i,
+b > i,
+strong > em,
+b > em {
+  font-weight: bold;
+  font-family: var(--serif-bold-italic-font-family);
+}
+
 ul {
   padding-left: 1.75rem;
   list-style-type: square;
