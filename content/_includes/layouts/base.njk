@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html{% if siteConfig.site.language %} lang="{{ siteConfig.site.language }}" {% endif %}{% if siteConfig.site.dir %} dir="{{ siteConfig.site.dir }}" {% endif %}class="no-js">
   <head>
     {% include "partials/head.njk" %}
   </head>
-  <body>
+  <body>fddff
     {% include "partials/header.njk" %}
     <div id="main" class="container">
       {{ content|safe }}

@@ -1,2 +1,6 @@
-<img src="{{ siteConfig.site.logo }}" alt="Site logo" />
-<span class="title">{{ title }}</span>
+{% if siteConfig.site.logo %}
+  <img src="{{ siteConfig.site.logo }}" alt="Site logo" />
+  <span class="title">{{ title }}</span>
+{% else %}
+  <span class="site_title">{{ title }}</span>
+{% endif %}
