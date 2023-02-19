@@ -1,4 +1,4 @@
-# Bliss - Blog Eleventy Theme
+# Bliss - Blog Theme For Eleventy
 
 **Bliss** is a single-column blog template for [Eleventy static site generator](https://11ty.dev) with strong focus on simplicity without sacrificing functionality.
 
