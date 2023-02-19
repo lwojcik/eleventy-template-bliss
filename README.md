@@ -14,8 +14,8 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 - **HTML, JS, JSON, CSS** optimizations
 - **RSS, JSON, Twtxt.txt** feeds + JSON-LD data
 - **accessibility** features
-- **HSL color palette** and CSS variables for quick personalization
-- easy to modify **modular CSS** augmented with SASS
+- **HSL color palette** and CSS variables for straightforward personalization
+- modular CSS augmented with SASS
 - custom disclaimers alongside post content
 - and more
 
