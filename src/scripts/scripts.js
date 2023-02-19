@@ -302,7 +302,7 @@ window.addEventListener('DOMContentLoaded', () => {
     return false;
   };
 
-  if (mastodonShareButton && mastodonShareDialog) {
+  if (mastodonShareDialog) {
     const openMastodonPopup = () => {
       document.querySelector('body').classList.add('no-scrollbar');
       mastodonShareDialog.classList.add('visible');
@@ -347,15 +347,17 @@ window.addEventListener('DOMContentLoaded', () => {
       );
     });
 
-    mastodonShareButton.addEventListener('click', openMastodonPopup);
-
-    mastodonShareButton.addEventListener('keyup', (event) => {
-      if (event.keyCode === 13) {
-        openMastodonPopup();
-      }
-    });
-
     mastodonDialogCloseLink.addEventListener('click', closeMastodonPopup);
+
+    if (mastodonShareButton) {
+      mastodonShareButton.addEventListener('click', openMastodonPopup);
+
+      mastodonShareButton.addEventListener('keyup', (event) => {
+        if (event.keyCode === 13) {
+          openMastodonPopup();
+        }
+      });
+    }
   }
 
   // Copy to clipboard button
@@ -376,7 +378,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     copyToClipboardButton.addEventListener('click', copyUrlToClipboard);
 
-    mastodonShareButton.addEventListener('keyup', (event) => {
+    copyToClipboardButton.addEventListener('keyup', (event) => {
       if (event.keyCode === 13) {
         copyUrlToClipboard();
       }

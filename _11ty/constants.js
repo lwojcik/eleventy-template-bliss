@@ -21,8 +21,8 @@ module.exports = {
   PDF_CONTENT_PATH: 'pdf/pdf-content.html',
   POST_COLLECTION_TAG_NAME: 'post',
   PAGE_COLLECTION_TAG_NAME: 'page',
-  ARTICLES_PER_PAGE: siteConfig.tags.postsPerPage,
-  IS_PRODUCTION: process.env.ELEVENTY_ENV !== 'development',
+  POSTS_PER_TAG_PAGE: siteConfig.tags.postsPerPage,
+  IS_PRODUCTION: process.env.NODE_ENV === 'production',
   SLUGIFY_CONFIG: {
     replacement: '-',
     lower: true,

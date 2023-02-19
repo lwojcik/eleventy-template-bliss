@@ -5,31 +5,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3rem;
+    min-width: 3rem;
     height: 3rem;
     margin-right: 0.5rem;
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
     font-family: var(--heading-font-family);
-
-    svg .fillable {
-      fill: var(--link-color);
-      @include transition(fill);
-    }
+    @include transition(opacity);
 
     span {
-      display: none;
       font-size: 1.5rem;
       line-height: 1;
+    }
+
+    .title {
+      display: none;
       padding-left: 0.75rem;
     }
 
     &:hover,
     &:focus {
-      svg .fillable {
-        fill: var(--link-hover-color);
-      }
+      opacity: 0.9;
     }
   }
 }
@@ -43,6 +40,7 @@
       flex-direction: row;
       width: auto;
 
+      img,
       svg {
         height: 3rem;
       }

@@ -3,7 +3,10 @@
 // https://github.com/jeromecoupe/11ty-paginate-taxonomies
 
 const moduleName = require('../helpers/moduleName');
-const { ARTICLES_PER_PAGE, POST_COLLECTION_TAG_NAME } = require('../constants');
+const {
+  POSTS_PER_TAG_PAGE,
+  POST_COLLECTION_TAG_NAME,
+} = require('../constants');
 const { chunkCollectionByKey } = require('../helpers/chunkCollectionByKey');
 
 const collectionKey = 'tags';
@@ -15,6 +18,6 @@ module.exports = {
       POST_COLLECTION_TAG_NAME
     );
 
-    return chunkCollectionByKey(taggedPosts, collectionKey, ARTICLES_PER_PAGE);
+    return chunkCollectionByKey(taggedPosts, collectionKey, POSTS_PER_TAG_PAGE);
   },
 };

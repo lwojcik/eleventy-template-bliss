@@ -1,3 +1,5 @@
+{% if siteConfig.tags.displayOnArchivePage %}
+<h2 id='tags'>{{ phrases.tags }}</h2>
 <div class="tag-list">
   <ul>
   {% for tag in collections.tagList %}
@@ -8,7 +10,7 @@
         <span class="count">({{ collections[tag]| length }})</span>
       </a>
     </li>
-    {% endfor %}
-    
+    {% endfor %}    
   </ul>
 </div>
+{% endif %}

@@ -13,6 +13,9 @@
 /video/*
   cache-control: max-age=31536000,public,immutable
 
+/fonts/*
+  cache-control: max-age=31536000,public,immutable
+
 /favicon.*
   cache-control: max-age=31536000,public,immutable
 

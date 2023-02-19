@@ -7,12 +7,16 @@ $baseSize: 16px;
 $baseHue: 210;
 
 $baseColor: hsl($baseHue, 80%, 50%);
-$white: lighten($baseColor, 68%);
+$white: hsl($baseHue, 80%, 97%);
 $black: hsl($baseHue, 5%, 10%);
 
 // Fonts
 
-$serifFontFamily: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+$baseSerifFontStack: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+$serifFontFamily: 'Merriweather', $baseSerifFontStack;
+$serifBoldFontFamily: 'Merriweather Bold', $baseSerifFontStack;
+$serifItalicFontFamily: 'Merriweather Italic', $baseSerifFontStack;
+$serifBoldItalicFontFamily: 'Merriweather Bold Italic', $baseSerifFontStack;
 $sansSerifFontFamily: PT Sans, ui-sans-serif, system-ui, -apple-system,
   BlinkMacSystemFont, Segoe UI, Roboto, SF Pro, Helvetica, Arial, Noto Sans,
   sans-serif;
@@ -39,6 +43,9 @@ $longTransitionTime: 0.2s;
   --base-font-size: #{$baseSize};
   --spacing: #{$spacing};
   --text-font-family: #{$serifFontFamily};
+  --serif-bold-font-family: #{$serifBoldFontFamily};
+  --serif-italic-font-family: #{$serifItalicFontFamily};
+  --serif-bold-italic-font-family: #{$serifBoldItalicFontFamily};
   --arial-font-family: #{$arialFamily};
   --emoji-font-family: #{$emojiFontFamily};
   --heading-font-family: #{$sansSerifFontFamily};
@@ -53,7 +60,7 @@ $longTransitionTime: 0.2s;
 $lightBackgroundColor: $white;
 $lightTextColor: $black;
 $lightLinkColor: darken($baseColor, 5%);
-$lightLinkHoverColor: lighten($lightLinkColor, 18%);
+$lightLinkHoverColor: lighten($lightLinkColor, 15%);
 $lightPostMetaColor: lighten($black, 50%);
 $lightTopMetaColor: lighten($black, 40%);
 $lightBottomMetaColor: $lightTopMetaColor;

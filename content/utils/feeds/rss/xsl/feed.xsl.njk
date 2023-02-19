@@ -21,9 +21,21 @@ eleventyExcludeFromCollections: true
             color: {{ siteConfig.feed.stylesheet.baseColor }};
             font-weight: bold;
           }
+          a:hover,
+          a:focus {
+            text-decoration: underline;
+          }
           body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
+          }
+          .logo {
+            line-height: 1;
+          }
+          
+          .logo img {
+            margin-right: 16px;
+            max-height: 40px;
           }
           aside {
             padding: 16px;
@@ -117,10 +129,6 @@ eleventyExcludeFromCollections: true
             </dl>
           </article>
         </xsl:for-each>
-        <footer>
-          {{ phrases.copyright_symbol }} {{ siteConfig.site.startYear }}-{% currentYear %}  <a target="_blank" href="{{ siteConfig.author.url }}">{{ siteConfig.author.name }}</a><br />
-          {{ phrases.license }}: <a href="{{ siteConfig.site.license.url }}">{{ siteConfig.site.license.name }}</a>
-        </footer>
       </body>
     </html>
   </xsl:template>
