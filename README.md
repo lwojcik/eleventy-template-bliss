@@ -4,7 +4,7 @@
 
 It is a modified and improved version of the theme running [Offbeat Bits - my personal blog](https://offbeatbits.com/).
 
-## Features:
+## Features
 
 - **light / dark mode switcher** + honoring browser color scheme preference
 - **sharing buttons for popular social media** (including Mastodon!) + copying post URL to clipboard
@@ -19,7 +19,7 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 - custom disclaimers alongside post content
 - and more
 
-Features I'm currently exploring (no promises or anything yet ;)):
+**Features I'm currently exploring (no promises or anything yet ;)):**
 
 - improved OpenGraph support (automatic generation + support for custom ones)
 - support for Netlify CMS
