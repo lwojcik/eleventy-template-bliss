@@ -8,7 +8,7 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 
 - **light / dark mode switcher** + honoring browser color scheme preference
 - **sharing buttons for popular social media** (including Mastodon!) + copying post URL to clipboard
-- **Mastodon integration:** generating `.well-known/webfinger` file + automatic generation of `<link rel="me">` tags for ownership verification
+- **Mastodon integration:** generating `.well-known/webfinger` file + automatic generation of `<link rel="me">` tags for site ownership verification
 - **translation ready** (support for custom language tags + separate file with static phrases)
 - **manifest file** for PWA
 - **HTML, JS, JSON, CSS** optimizations
