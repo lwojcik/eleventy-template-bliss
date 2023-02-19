@@ -21,7 +21,7 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 
 **Features I'm currently exploring (no promises or anything yet ;)):**
 
-- improved OpenGraph support (automatic generation + support for custom ones)
+- improved OpenGraph support (automatic generation + support for custom images)
 - support for Netlify CMS
 - syntax highlighting
 - web mentions
