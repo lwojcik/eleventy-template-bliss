@@ -2,7 +2,7 @@ module.exports = {
   site: {
     title: 'Bliss',
     description: 'Simple Eleventy blog template',
-    url: 'https://eleventy-bliss.vercel.app/',
+    url: process.env.URL || 'https://eleventy-bliss.vercel.app/',
     logo: '/images/logo.svg',
     language: 'en',
     startYear: 2022,
