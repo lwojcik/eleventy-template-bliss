@@ -12,11 +12,7 @@
     font-weight: bold;
     text-transform: uppercase;
     font-family: var(--heading-font-family);
-
-    svg .fillable {
-      fill: var(--link-color);
-      @include transition(fill);
-    }
+    @include transition(opacity);
 
     span {
       font-size: 1.5rem;
@@ -30,9 +26,7 @@
 
     &:hover,
     &:focus {
-      svg .fillable {
-        fill: var(--link-hover-color);
-      }
+      opacity: 0.9;
     }
   }
 }
