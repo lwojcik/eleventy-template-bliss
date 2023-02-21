@@ -1,3 +1,5 @@
+const packageJson = require('../../package.json');
+
 module.exports = {
   // ---------------------------------------------------------------------------
   // Information about your site
@@ -37,6 +39,7 @@ module.exports = {
     // https://www.11ty.dev/speedlify/
     generator: {
       name: 'Eleventy',
+      version: packageJson.dependencies['@11ty/eleventy'].replace('^', ''),
       url: 'https://11ty.dev',
     },
     // Directionality of the element's text specified
