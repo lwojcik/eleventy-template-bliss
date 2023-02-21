@@ -23,6 +23,7 @@ module.exports = {
   newer_article: 'Newer article',
   older_article: 'Older article',
   articles_tagged_as: 'Articles tagged as',
+  view_all_articles_tagged_as: 'Browse and read articles tagged as',
   tagged_as: 'Tagged as',
   copyright_symbol: '©',
   right_arrow_symbol: '→',

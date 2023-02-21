@@ -1,8 +1,10 @@
-{% set pageDescription %}
-  {% if description %}
+{%- set pageDescription -%}
+  {%- if tag -%}
+    {{ phrases.view_all_articles_tagged_as }} {{ tag.title|capitalizeAllWords }}
+  {%- elif description -%}
     {{ description | truncate(140) }}
-  {% else %}
+  {%- else -%}
     {{ siteConfig.site.description }}
-  {% endif %}
-{% endset %}
-<meta name="description" content="{% if description %}{{ description }}{% else %}{{ siteConfig.site.description }}{% endif %}">
+  {%- endif -%}
+{%- endset -%}
+<meta name="description" content="{{ pageDescription }}">
