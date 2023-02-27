@@ -11,10 +11,7 @@ const productionPlugins = IS_PRODUCTION
   ? [
       {
         body: srcSet,
-      },
-      {
-        body: pluginPWA,
-      },
+      }
     ]
   : [];
 
@@ -30,6 +27,9 @@ const plugins = [
   },
   {
     body: eleventyNavigationPlugin,
+  },
+  {
+    body: pluginPWA,
   },
 ];
 
