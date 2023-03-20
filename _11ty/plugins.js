@@ -6,12 +6,13 @@ const pluginEmoji = require('eleventy-plugin-emoji');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const srcSet = require('./plugins/srcset');
 const pluginPWA = require('eleventy-plugin-pwa-v2');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 const productionPlugins = IS_PRODUCTION
   ? [
       {
         body: srcSet,
-      }
+      },
     ]
   : [];
 
@@ -30,6 +31,9 @@ const plugins = [
   },
   {
     body: pluginPWA,
+  },
+  {
+    body: syntaxHighlight,
   },
 ];
 

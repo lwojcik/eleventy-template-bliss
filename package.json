@@ -29,6 +29,7 @@
     "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "crypto-js": "^4.1.1",
     "eleventy-plugin-emoji": "^1.1.0",
     "eleventy-plugin-pwa-v2": "^1.0.0",

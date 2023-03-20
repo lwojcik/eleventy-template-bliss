@@ -11,6 +11,7 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 - **Mastodon integration:** generating `.well-known/webfinger` file + automatic generation of `<link rel="me">` tags for site ownership verification
 - **translation ready** (support for custom language tags + separate file with static phrases)
 - **manifest file** for PWA
+- **code syntax highlighting** with PrismJS using [Eleventy syntax highlighting plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/)
 - **HTML, JS, JSON, CSS** optimizations
 - **RSS, JSON, Twtxt.txt** feeds + JSON-LD data
 - **accessibility** features
