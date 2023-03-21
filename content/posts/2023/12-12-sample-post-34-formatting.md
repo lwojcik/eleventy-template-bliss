@@ -8,6 +8,12 @@ tags:
   - sample post 34
   - test
   - tag with pagination
+image:
+  src: /images/sample-post-image.jpg
+  alt: Sample post image
+  credit:
+    author: Marko Blazevic / Pexels
+    url: https://www.pexels.com/photo/cute-gray-kitten-standing-on-a-wooden-flooring-774731/
 ---
 
 This is the first paragraph of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacus magna, lobortis sit amet mauris sed, fringilla scelerisque risus. Suspendisse sem nibh, pretium id ante sed, porttitor malesuada nibh. Vivamus pretium nunc nec pretium placerat.

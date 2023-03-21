@@ -11,7 +11,7 @@
     "predev": "npm run clean",
     "dev": "npm-run-all build:sass --parallel watch:*",
     "debug": "DEBUG=Eleventy* npm run dev",
-    "watch:eleventy": "npx eleventy --serve",
+    "watch:eleventy": "npx eleventy --serve --quiet",
     "format": "npm run format:js",
     "format:js": "prettier --check *.js",
     "formatfix:js": "prettier --write *.js",
