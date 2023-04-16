@@ -5,7 +5,7 @@ permalink: /.well-known/webfinger
 
 {%- set fediverse = siteConfig.author.fediverse[0] -%}
 {%- set username = fediverse.username -%}
-{%- set server = fediverse.username -%}
+{%- set server = fediverse.server -%}
 {%- set url = fediverse.url -%}
 
 {"subject":"acct:{{ username }}@{{ server }}","aliases":["{{ url }}","https://{{ server }}/users/{{ username }}"],"links":[{"rel":"http://webfinger.net/rel/profile-page","type":"text/html","href":"{{ url }}"},{"rel":"self","type":"application/activity+json","href":"https://{{ server }}/users/{{ username }}"},{"rel":"http://ostatus.org/schema/1.0/subscribe","template":"https://{{ server }}/authorize_interaction?uri={uri}"}]}
