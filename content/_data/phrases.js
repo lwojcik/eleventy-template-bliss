@@ -43,6 +43,7 @@ module.exports = {
   share_this_article: 'Share this article',
   opens_prompt: 'opens prompt window',
   opens_new_tab: 'opens a new tab',
+  image_credit: 'Image credit',
   copy_to_clipboard: 'Copy article URL to clipboard',
   which_instance: 'To which instance?',
   mastodon_share_line_1:

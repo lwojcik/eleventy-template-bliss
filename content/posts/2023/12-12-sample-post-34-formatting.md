@@ -1,5 +1,5 @@
 ---
-title: Sample post number 34 (general formatting)
+title: Sample post number 34 (general formatting + custom image)
 description: Post description that will be visible in HTML meta description.
 date: 2023-12-12
 tags:
