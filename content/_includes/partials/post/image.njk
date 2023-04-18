@@ -1,0 +1,11 @@
+{% if image %}
+<div class="top-image">
+<img src="{{ image.src }}" alt="{{ imageAlt }}" />
+{% if image.credit %}
+<p class="credit">
+  {{phrases.image_credit}}:
+  <a href="{{ image.credit.url }}">{{ image.credit.author }}</a>
+</p>
+{% endif %}
+</div>
+{% endif %}
