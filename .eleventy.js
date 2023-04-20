@@ -8,6 +8,8 @@ const {
   plugins,
   constants,
 } = require('./_11ty');
+const fs = require('fs');
+const Image = require('@11ty/eleventy-img');
 
 module.exports = function (eleventyConfig) {
   // --- Initial config
@@ -48,6 +50,33 @@ module.exports = function (eleventyConfig) {
 
   Object.values(plugins).forEach(({ body, options }) => {
     eleventyConfig.addPlugin(body, options && options);
+  });
+
+  // --- After build
+
+  eleventyConfig.on('afterBuild', () => {
+    const socialPreviewImagesDir = '_site/images/share/';
+    fs.readdir(socialPreviewImagesDir, function (_err, files) {
+      if (files.length > 0) {
+        files.forEach(function (filename) {
+          if (filename.endsWith('.svg')) {
+            const imageUrl = socialPreviewImagesDir + filename;
+            Image(imageUrl, {
+              formats: ['jpeg'],
+              outputDir: './' + socialPreviewImagesDir,
+              filenameFormat: () => {
+                const outputFilename = filename.substring(
+                  0,
+                  filename.length - 4
+                );
+
+                return `${outputFilename}.jpg`;
+              },
+            });
+          }
+        });
+      }
+    });
   });
 
   // --- Consolidating everything under content folder
