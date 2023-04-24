@@ -53,9 +53,8 @@ module.exports = function (eleventyConfig) {
 
   // --- After build events
 
-  Object.values(events.after).forEach(({ body }) => {
-    console.log(body);
-    eleventyConfig.on('eleventy.after', body);
+  Object.values(events.after).forEach((afterBuildEvent) => {
+    eleventyConfig.on('eleventy.after', afterBuildEvent);
   });
 
   // --- Consolidating everything under content folder
