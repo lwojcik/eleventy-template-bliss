@@ -111,6 +111,13 @@ module.exports = {
     type: 'website',
     // Default image to use when none is specified
     image: '/images/share-400x400.jpg',
+    // Opt-in to automatic generation of OpenGraph images
+    // If disabled, default images will be used
+    // If enabled, make sure you _like_ the way they look like
+    // (build the site and find the images in _site/images/share directory)
+    // To modify what generated OG images look like
+    // check out content/_data/utils/og-image.njk
+    enableImageGeneration: true,
     // Background color for auto-generated OpenGraph images
     ogImageBackgroundColor: '#1773cf',
     // Text color for for auto-generated OpenGraph images

@@ -1,16 +1,2 @@
-{% set siteTitle = siteConfig.site.title %}
-{%- set pageTitle -%}
-  {%- if tag -%}
-    {{ tag.title|capitalizeAllWords }}{% if tag.currentPage >= 2 %} - {{ phrases.page }} {{ tag.currentPage }} {{ phrases.of }} {{ tag.totalPages }}{% endif %} - {{ siteTitle }}
-  {%- elif title %}
-    {{ title | safe }} - {{ siteTitle }} 
-  {%- else -%}
-    {%- if pagination.pageNumber > 0 -%}
-      {{ phrases.page }} {{ pagination.pageNumber + 1 }} {{ phrases.of }} {{ pagination.pages|length }} - {{ siteTitle }}
-    {%- else -%}
-      {{ siteTitle }}
-    {%- endif -%}
-  {%- endif -%}
-{%- endset -%}
 <title>{{ pageTitle }}</title>
 <meta property="og:title" content="{{ pageTitle }}">

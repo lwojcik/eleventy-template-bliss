@@ -1,10 +1,1 @@
-{%- set pageDescription -%}
-  {%- if tag -%}
-    {{ phrases.view_all_articles_tagged_as }} {{ tag.title|capitalizeAllWords }}
-  {%- elif description -%}
-    {{ description | truncate(140) }}
-  {%- else -%}
-    {{ siteConfig.site.description }}
-  {%- endif -%}
-{%- endset -%}
 <meta name="description" content="{{ pageDescription }}">
