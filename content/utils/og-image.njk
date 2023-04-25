@@ -21,21 +21,28 @@ eleventyExcludeFromCollections: true
         {% set verticalStartingPoint = 210 %}
     {% endif %}
 
-    <rect width="100%" height="100%" fill="#1773cf" />
+    {% if siteConfig.site.logo %}
+        {% set headlineOffset = 360 %}
+    {% else %}
+        {% set headlineOffset = 120 %}
+    {% endif %}
 
-    <text text-anchor="start" font-family="'Georgia', Times, serif" fill="#fff" font-size="140">
-        <tspan x="60" y="320">OB</tspan>
-    </text>
+    {% set ogImageBackgroundColor = siteConfig.opengraph.ogImageBackgroundColor %}
+    {% set ogImageTextColor = siteConfig.opengraph.ogImageTextColor %}
 
-    <line x1="300" y1="80" x2="300" y2="548" stroke="#fff" />
+    <rect width="100%" height="100%" fill="{{ ogImageBackgroundColor }}" />
 
-    <text font-family="'Georgia', Times, serif" font-size="30" fill="#fff">
-        <tspan x="350" y="{{verticalStartingPoint - 90}}">{{ preview.date | readableFullDate }}</tspan>
+    {% if siteConfig.site.logo %}
+    <image style="outline:1px solid {{ ogImageTextColor }};outline-offset:2px;" x="80" y="180" width="200" height="200" href="../../../assets{{ siteConfig.site.logo }}" />
+    {% endif %}
+
+    <text font-family="'Georgia', Times, serif" font-size="30" fill="{{ ogImageTextColor }}">
+        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint - 90}}">{{ preview.date | readableFullDate }}</tspan>
     </text>
     
-    <text id="text" font-family="'Georgia', Times, serif" fill="#fff" font-size="80" font-weight="bold">
+    <text id="text" font-family="'Georgia', Times, serif" fill="{{ ogImageTextColor }}" font-size="80" font-weight="bold">
     {% for line in titleInLines %}
-        <tspan x="350" y="{{verticalStartingPoint + loop.index0 * 80}}">{{line}}</tspan>
+        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint + loop.index0 * 100}}">{{line}}</tspan>
     {% endfor %}
     </text>
 

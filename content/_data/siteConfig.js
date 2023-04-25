@@ -105,11 +105,16 @@ module.exports = {
     },
   ],
   // ---------------------------------------------------------------------------
-  // Default settings for OpenGraph tags
+  // Default settings for OpenGraph functionality (tags and generated images)
   // ---------------------------------------------------------------------------
   opengraph: {
     type: 'website',
+    // Default image to use when none is specified
     image: '/images/share-400x400.jpg',
+    // Background color for auto-generated OpenGraph images
+    ogImageBackgroundColor: '#1773cf',
+    // Text color for for auto-generated OpenGraph images
+    ogImageTextColor: '#fff',
   },
   // ---------------------------------------------------------------------------
   // Default settings for Twitter graph tags
