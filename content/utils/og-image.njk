@@ -21,28 +21,25 @@ eleventyExcludeFromCollections: true
         {% set verticalStartingPoint = 210 %}
     {% endif %}
 
-    {% if siteConfig.site.logo %}
-        {% set headlineOffset = 360 %}
-    {% else %}
-        {% set headlineOffset = 120 %}
-    {% endif %}
+    {% set headlineOffset = 120 %}
 
     {% set ogImageBackgroundColor = siteConfig.opengraph.ogImageBackgroundColor %}
     {% set ogImageTextColor = siteConfig.opengraph.ogImageTextColor %}
 
     <rect width="100%" height="100%" fill="{{ ogImageBackgroundColor }}" />
 
-    {% if siteConfig.site.logo %}
-    <image style="outline:1px solid {{ ogImageTextColor }};outline-offset:2px;" x="80" y="180" width="200" height="200" href="../../../assets{{ siteConfig.site.logo }}" />
-    {% endif %}
+    <text font-family="'Georgia', Times, serif" font-size="30" fill="{{ ogImageTextColor }}">
+        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint - 90}}">{{ siteConfig.site.title }}</tspan>
+    </text>
 
     <text font-family="'Georgia', Times, serif" font-size="30" fill="{{ ogImageTextColor }}">
-        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint - 90}}">{{ preview.date | readableFullDate }}</tspan>
+        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint + 90}}">{{ preview.date | readableFullDate }}</tspan>
     </text>
+
     
     <text id="text" font-family="'Georgia', Times, serif" fill="{{ ogImageTextColor }}" font-size="80" font-weight="bold">
     {% for line in titleInLines %}
-        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint + loop.index0 * 100}}">{{line}}</tspan>
+        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint + loop.index0 * 100}}">{{ line }}</tspan>
     {% endfor %}
     </text>
 

@@ -25,7 +25,7 @@ module.exports = () => {
 
         // we no longer need SVG files after converting to JPG so let's clean them
 
-        fs.unlinkSync(imageUrl);
+        // fs.unlinkSync(imageUrl);
       }
     });
   }
