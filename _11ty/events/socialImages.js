@@ -25,14 +25,15 @@ module.exports = () => {
             },
           });
 
-          // we no longer need SVG files after converting to JPG so let's clean them
+          // we no longer need SVG files after converting to JPG so we remove them
 
           // fs.unlinkSync(imageUrl);
         }
       });
     }
   } else {
-    // If OG image generation is off, SVG files are not needed
+    // If OG image generation is off, SVG files are not needed,
+    // so we remove them from the build
     fs.rmSync(SOCIAL_PREVIEW_IMAGES_DIR, { recursive: true, force: true });
   }
 };

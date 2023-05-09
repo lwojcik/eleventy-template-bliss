@@ -1,6 +1,6 @@
 const moduleName = require('../helpers/moduleName');
 
-const CHARACTERS_PER_LINE = 16;
+const CHARACTERS_PER_LINE = 14;
 
 const body = (input) => {
   const parts = input.split(' ');

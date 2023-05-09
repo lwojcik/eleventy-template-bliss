@@ -114,10 +114,10 @@ module.exports = {
     // Opt-in to automatic generation of OpenGraph images
     // If disabled, default images will be used
     // If enabled, make sure you _like_ the way they look like
-    // (build the site and find the images in _site/images/share directory)
+    // (build the site and find the images in _site/images/share folder)
     // To modify what generated OG images look like
-    // check out content/_data/utils/og-image.njk
-    enableImageGeneration: true,
+    // edit content/_data/utils/og-image.njk
+    enableImageGeneration: false,
     // Background color for auto-generated OpenGraph images
     ogImageBackgroundColor: '#1773cf',
     // Text color for for auto-generated OpenGraph images

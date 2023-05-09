@@ -23,6 +23,8 @@ eleventyExcludeFromCollections: true
 
     {% set headlineOffset = 120 %}
 
+    {{ verticalStartingPoint }}
+
     {% set ogImageBackgroundColor = siteConfig.opengraph.ogImageBackgroundColor %}
     {% set ogImageTextColor = siteConfig.opengraph.ogImageTextColor %}
 
@@ -31,16 +33,16 @@ eleventyExcludeFromCollections: true
     <text font-family="'Georgia', Times, serif" font-size="30" fill="{{ ogImageTextColor }}">
         <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint - 90}}">{{ siteConfig.site.title }}</tspan>
     </text>
-
-    <text font-family="'Georgia', Times, serif" font-size="30" fill="{{ ogImageTextColor }}">
-        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint + 90}}">{{ preview.date | readableFullDate }}</tspan>
-    </text>
-
     
     <text id="text" font-family="'Georgia', Times, serif" fill="{{ ogImageTextColor }}" font-size="80" font-weight="bold">
     {% for line in titleInLines %}
         <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint + loop.index0 * 100}}">{{ line }}</tspan>
     {% endfor %}
     </text>
+
+    <text font-family="'Georgia', Times, serif" font-size="30" fill="{{ ogImageTextColor }}">
+        <tspan x="{{ headlineOffset }}" y="{{ verticalStartingPoint + numberOfLines * 100}}">{{ preview.date | readableFullDate }}</tspan>
+    </text>
+
 
 </svg>
