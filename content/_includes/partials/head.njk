@@ -1,3 +1,49 @@
+{%- set site = siteConfig.site -%}
+{%- set author = siteConfig.author -%}
+{%- set opengraph = siteConfig.opengraph -%}
+{%- set twitter = siteConfig.twitter -%}
+
+{%- set ogImage -%}
+  {%- if image -%}
+    {%- set openGraphImage  -%}
+      {%- resizedImage image.src, 1200, 630 -%}
+    {%- endset -%}
+    {{ openGraphImage | alwaysProductionUrl }}
+  {% elif opengraph.enableImageGeneration and title %}
+    {%- set openGraphImage  -%}
+      {{ '/images/share/' }}{{ title | slugify }}{{ '-preview.jpg' }}
+    {%- endset -%}
+  {{ openGraphImage | alwaysProductionUrl }}
+  {%- else -%}
+    {{ siteConfig.opengraph.image | alwaysProductionUrl }} 
+  {%- endif -%}
+{%- endset -%}
+
+{% set siteTitle = siteConfig.site.title %}
+{%- set pageTitle -%}
+  {%- if tag -%}
+    {{ tag.title|capitalizeAllWords }}{% if tag.currentPage >= 2 %} - {{ phrases.page }} {{ tag.currentPage }} {{ phrases.of }} {{ tag.totalPages }}{% endif %} - {{ siteTitle }}
+  {%- elif title %}
+    {{ title | safe }} - {{ siteTitle }} 
+  {%- else -%}
+    {%- if pagination.pageNumber > 0 -%}
+      {{ phrases.page }} {{ pagination.pageNumber + 1 }} {{ phrases.of }} {{ pagination.pages|length }} - {{ siteTitle }}
+    {%- else -%}
+      {{ siteTitle }}
+    {%- endif -%}
+  {%- endif -%}
+{%- endset -%}
+
+{%- set pageDescription -%}
+  {%- if tag -%}
+    {{ phrases.view_all_articles_tagged_as }} {{ tag.title|capitalizeAllWords }}
+  {%- elif description -%}
+    {{ description | truncate(140) }}
+  {%- else -%}
+    {{ siteConfig.site.description }}
+  {%- endif -%}
+{%- endset -%}
+
 {% include "partials/head/common.njk" %}
 {% include "partials/head/title.njk" %}
 {% include "partials/head/styles.njk" %}

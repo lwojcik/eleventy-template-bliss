@@ -1,0 +1,48 @@
+---
+pagination:
+  data: collections.publishedItems
+  size: 1
+  alias: preview
+permalink: "/images/share/{{ preview.data.title | slugify }}-preview.svg"
+eleventyExcludeFromCollections: true
+---
+
+<svg width="1200" height="628" viewBox="0 0 1200 628" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    {% set titleInLines = preview.data.title | splitlines %}
+    {% set numberOfLines = titleInLines.length %}
+    {% if numberOfLines == 1 %}
+        {% set verticalStartingPoint = 340 %}
+    {% elseif numberOfLines == 2 %}
+        {% set verticalStartingPoint = 290 %}
+    {% elseif numberOfLines == 3 %}
+        {% set verticalStartingPoint = 250 %}
+    {% elseif numberOfLines == 4 %}
+        {% set verticalStartingPoint = 210 %}
+    {% endif %}
+
+    {% set headlineOffset = 120 %}
+
+    {{ verticalStartingPoint }}
+
+    {% set ogImageBackgroundColor = siteConfig.opengraph.ogImageBackgroundColor %}
+    {% set ogImageTextColor = siteConfig.opengraph.ogImageTextColor %}
+
+    <rect width="100%" height="100%" fill="{{ ogImageBackgroundColor }}" />
+
+    <text font-family="'Georgia', Times, serif" font-size="30" fill="{{ ogImageTextColor }}">
+        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint - 90}}">{{ siteConfig.site.title }}</tspan>
+    </text>
+    
+    <text id="text" font-family="'Georgia', Times, serif" fill="{{ ogImageTextColor }}" font-size="80" font-weight="bold">
+    {% for line in titleInLines %}
+        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint + loop.index0 * 100}}">{{ line }}</tspan>
+    {% endfor %}
+    </text>
+
+    <text font-family="'Georgia', Times, serif" font-size="30" fill="{{ ogImageTextColor }}">
+        <tspan x="{{ headlineOffset }}" y="{{ verticalStartingPoint + numberOfLines * 100}}">{{ preview.date | readableFullDate }}</tspan>
+    </text>
+
+
+</svg>

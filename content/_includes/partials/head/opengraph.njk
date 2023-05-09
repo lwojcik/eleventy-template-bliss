@@ -1,20 +1,5 @@
-{%- set site = siteConfig.site -%}
-{%- set opengraph = siteConfig.opengraph -%}
-{%- set twitter = siteConfig.twitter -%}
-
-{%- set ogImage -%}
-  {%- if image -%}
-    {%- set openGraphImage  -%}
-      {%- resizedImage image.src, 1200, 630 -%}
-    {%- endset -%}
-    {{ openGraphImage | alwaysProductionUrl }}
-  {%- else -%}
-    {{ siteConfig.opengraph.image | alwaysProductionUrl }}
-  {%- endif -%}
-{%- endset -%}
-
 <meta property="og:url" content="{{ page.url | alwaysProductionUrl }}">
 <meta property="og:type" content="{{ opengraph.type }}">
 <meta property="og:image" content="{{ ogImage }}">
-<meta name="twitter:image" content="{{ ogImage }}">
+<meta property="twitter:image" content="{{ ogImage }}">
 <meta property="twitter:card" content="{{ twitter.card }}">

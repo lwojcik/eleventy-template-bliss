@@ -1,19 +1,9 @@
-{%- set site = siteConfig.site -%}
-{%- set author = siteConfig.author -%}
-{%- set opengraph = siteConfig.opengraph -%}
-{%- set pageDescription -%}
-  {%- if description -%}
-    {{ description | truncate(140) }}
-  {%- else -%}
-    {{ siteConfig.site.description }}
-  {%- endif -%}
-{%- endset -%}
 {%- set jsonLD -%}
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "{%- if title -%}{{ title }}{%- else -%}{{ site.title }}{%- endif -%}",
-        "image": ["{%- if image -%}{{ image | alwaysProductionUrl }}{%- else -%}{{ opengraph.image | alwaysProductionUrl }}{%- endif -%}"],
+        "image": ["{{ ogImage }}"],
         "author": {
             "@type": "Person",
             "name": "{{ author.name }}"

@@ -7,6 +7,7 @@ const {
   filters,
   plugins,
   constants,
+  events,
 } = require('./_11ty');
 
 module.exports = function (eleventyConfig) {
@@ -49,6 +50,14 @@ module.exports = function (eleventyConfig) {
   Object.values(plugins).forEach(({ body, options }) => {
     eleventyConfig.addPlugin(body, options && options);
   });
+
+  // --- After build events
+
+  if (events.after.length > 0) {
+    Object.values(events.after).forEach((afterBuildEvent) => {
+      eleventyConfig.on('eleventy.after', afterBuildEvent);
+    });
+  }
 
   // --- Consolidating everything under content folder
 

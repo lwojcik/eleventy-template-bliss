@@ -7,6 +7,7 @@ const shortcodes = requireDir('./shortcodes');
 const filters = requireDir('./filters');
 const plugins = require('./plugins');
 const constants = require('./constants');
+const events = require('./events');
 
 module.exports = {
   initialSetup,
@@ -17,4 +18,5 @@ module.exports = {
   filters,
   plugins,
   constants,
+  events,
 };
