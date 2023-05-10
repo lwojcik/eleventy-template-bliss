@@ -33,6 +33,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "crypto-js": "^4.1.1",
     "eleventy-plugin-emoji": "^1.1.0",
+    "eleventy-plugin-gen-favicons": "^1.1.2",
     "eleventy-plugin-pwa-v2": "^1.0.0",
     "eslint": "^8.36.0",
     "eslint-plugin-import": "^2.27.5",
