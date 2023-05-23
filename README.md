@@ -10,6 +10,7 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 - **sharing buttons for popular social media** (including Mastodon!) + copying post URL to clipboard
 - **Mastodon integration:** generating `.well-known/webfinger` file + automatic generation of `<link rel="me">` tags for site ownership verification
 - **translation ready** (support for custom language tags + separate file with static phrases)
+- **automatic favicon generation**
 - **manifest file** for PWA
 - **automatic OpenGraph image generation**
 - **code syntax highlighting** with PrismJS using [Eleventy syntax highlighting plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/)
@@ -64,8 +65,9 @@ Non-exhaustive list of steps to make the template **your own**. Some of them are
 - [ ] If you use post disclaimers at the beginning of your posts - consider using the built-in disclaimer feature - see [`06-10-sample-post-33-disclaimer.md`](./content/posts/2023/06-10-sample-post-33-disclaimer.md) or [`05-31-sample-post-32-linked-disclaimer.md`](./content/posts/2023/05-31-sample-post-32-linked-disclaimer.md) for reference
 - [ ] Add your own pages - use one of the existing placeholder pages as a reference
 - [ ] Add / remove meta pages in the footer - see [`siteConfig.js`](./content/_data/siteConfig.js)
-- [ ] Replace favicon files (`favicon.ico`, `favicon.svg`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png`) with ones relevant to your site
+- [ ] Replace a favicon file (`favicon.svg`) with your own - only one file is needed, the remaining ones will be generated on build
 - [ ] Replace OpenGraph images with ones relevant to your site
+- [ ] Decide if you want to use automated OpenGragh image generation + consider modifying their appearance to suit your taste (see `siteConfig.js` for more info)
 - [ ] Copy your existing static assets to `assets` folder. Note that the top of `assets` folder corresponds to the _root directory_ of your site (`_site`)
 - [ ] Modify anything else you don't like about the theme to match your preferences
 - [ ] Enjoy! :)
