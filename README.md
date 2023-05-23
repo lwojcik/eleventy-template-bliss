@@ -22,10 +22,6 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 - custom disclaimers alongside post content
 - and more
 
-**Features I'm currently exploring (no promises or anything yet ;)):**
-
-- improved OpenGraph support (automatic generation + support for custom images)
-
 ## Live demos
 
 On Netlify: https://eleventy-bliss.netlify.app/
