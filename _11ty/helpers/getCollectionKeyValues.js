@@ -1,4 +1,7 @@
 const slugifyString = require('./slugifyString');
+const siteConfig = require('../../content/_data/siteConfig');
+
+const { language, options } = siteConfig.localeSort;
 
 /**
  * Returns array of unique key values for passed collection
@@ -12,7 +15,7 @@ const uniqueKeyValues = (collection, key) => {
   let collectionKeyValues = collection
     .filter((item) => key in item.data)
     .flatMap((item) => item.data[key])
-    .sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
+    .sort((a, b) => a.localeCompare(b, language, options));
 
   // dedupe
   let uniqueValues = [...new Set(collectionKeyValues)];
