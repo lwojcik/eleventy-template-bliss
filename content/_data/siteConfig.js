@@ -275,4 +275,17 @@ module.exports = {
     i192: '/icon-192.png',
     i512: '/icon-512.png',
   },
+  // ---------------------------------------------------------------------------
+  // Locale-based sorting options (mostly for tags)
+  // ---------------------------------------------------------------------------
+  localeSort: {
+    // Base language used for locale-based sorting
+    // If you don't use characters with diacritic marks in your language,
+    // you can probably leave this unchanged
+    language: 'en',
+    // Options for localeCompare tag sorting method
+    options: {
+      sensitivity: 'base',
+    },
+  },
 };
