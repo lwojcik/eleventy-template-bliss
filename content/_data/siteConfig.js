@@ -110,7 +110,7 @@ module.exports = {
   opengraph: {
     type: 'website',
     // Default image to use when none is specified
-    image: '/images/share-400x400.jpg',
+    image: '/images/share-1200x600.jpg',
     // Opt-in to automatic generation of OpenGraph images
     // If disabled, default images will be used
     // If enabled, make sure you _like_ the way they look like
@@ -127,8 +127,8 @@ module.exports = {
   // Default settings for Twitter graph tags
   // ---------------------------------------------------------------------------
   twitter: {
-    card: 'summary',
-    image: '/images/share-400x400.jpg',
+    card: 'summary_large_image',
+    image: '/images/share-1200x600.jpg',
   },
   // ---------------------------------------------------------------------------
   // Settings for post tags
