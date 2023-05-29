@@ -9,7 +9,7 @@
       {%- resizedImage image.src, 1200, 630 -%}
     {%- endset -%}
     {{ openGraphImage | alwaysProductionUrl }}
-  {% elif opengraph.enableImageGeneration and title %}
+  {%- elif opengraph.enableImageGeneration and title -%}
     {%- set openGraphImage  -%}
       {{ '/images/share/' }}{{ title | slugify }}{{ '-preview.jpg' }}
     {%- endset -%}
@@ -23,7 +23,7 @@
 {%- set pageTitle -%}
   {%- if tag -%}
     {{ tag.title|capitalizeAllWords }}{% if tag.currentPage >= 2 %} - {{ phrases.page }} {{ tag.currentPage }} {{ phrases.of }} {{ tag.totalPages }}{% endif %} - {{ siteTitle }}
-  {%- elif title %}
+  {%- elif title -%}
     {{ title | safe }} - {{ siteTitle }} 
   {%- else -%}
     {%- if pagination.pageNumber > 0 -%}
@@ -42,6 +42,14 @@
   {%- else -%}
     {{ siteConfig.site.description }}
   {%- endif -%}
+{%- endset -%}
+
+{%- set ogCardType -%}
+{%- if ogType -%}
+{{ ogType }}
+{%- else -%}
+{{ opengraph.type }}
+{%- endif -%}
 {%- endset -%}
 
 {% include "partials/head/common.njk" %}
