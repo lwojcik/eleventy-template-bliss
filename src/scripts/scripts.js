@@ -31,6 +31,16 @@ const scrollToTop = () => {
   });
 };
 
+const getScrollPercent = () => {
+  const htmlElement = document.documentElement;
+  const body = document.body;
+  const scrollTop = htmlElement.scrollTop || body.scrollTop;
+  const scrollHeight = htmlElement.scrollHeight || body.scrollHeight;
+  const clientHeight = htmlElement.clientHeight;
+
+  return (scrollTop / (scrollHeight - clientHeight)) * 100;
+};
+
 window.addEventListener('DOMContentLoaded', () => {
   const htmlElement = document.querySelector('html');
 
@@ -109,6 +119,21 @@ window.addEventListener('DOMContentLoaded', () => {
       mainContainerStyle.display = 'block';
     }
   });
+
+  // Reading progress bar
+
+  const progressBar = document.querySelector('.reading-progress-bar');
+
+  if (progressBar) {
+    const setProgress = () => {
+      const width = getScrollPercent();
+      progressBar.style.width = width + '%';
+    };
+
+    window.addEventListener('scroll', setProgress);
+
+    setProgress();
+  }
 
   // Jump to top arrow
 
