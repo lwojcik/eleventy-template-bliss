@@ -2,6 +2,10 @@
 layout: base
 ---
 
+{% if siteConfig.enableReadingProgressBar %}
+<div class="reading-progress-bar"></div>
+{% endif %}
+
 <article class="single-article">
 
   {% include "partials/post/image.njk" %}

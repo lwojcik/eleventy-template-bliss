@@ -288,4 +288,6 @@ module.exports = {
       sensitivity: 'base',
     },
   },
+  // Enable reading progress bar on article pages
+  enableReadingProgressBar: true,
 };
