@@ -13,6 +13,7 @@
       svg {
         width: 3rem;
         height: 3rem;
+        @include transition(opacity);
       }
 
       &:hover svg,
