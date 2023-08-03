@@ -22,11 +22,9 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 - custom disclaimers alongside post content
 - and more
 
-## Live demos
+## Live demo
 
-On Netlify: https://eleventy-bliss.netlify.app/
-
-On Vercel: https://eleventy-bliss.vercel.app/
+https://eleventy-multiplicity.lkmt.us/
 
 ## Instant deploy
 
