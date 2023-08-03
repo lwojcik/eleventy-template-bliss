@@ -24,7 +24,7 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 
 ## Live demo
 
-https://eleventy-multiplicity.lkmt.us/
+https://eleventy-bliss.lkmt.us/
 
 ## Instant deploy
 
