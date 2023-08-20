@@ -145,8 +145,9 @@ module.exports = {
     postsPerPage: 10,
   },
   // ---------------------------------------------------------------------------
-  // Settings for PWA manifest file
+  // Settings for PWA
   // ---------------------------------------------------------------------------
+  enablePWA: false, // If enabled, service worker for PWA will be registered
   manifestJson: {
     // Language of PWA application
     language: 'en-US',
