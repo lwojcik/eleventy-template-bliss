@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 const { IS_PRODUCTION } = require('./constants');
 const siteConfig = require('../content/_data/siteConfig');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
@@ -18,6 +17,32 @@ const productionPlugins = IS_PRODUCTION
     ]
   : [];
 
+const pwaPluginConfig = siteConfig.enablePWA
+  ? [
+      {
+        body: pluginPWA,
+        options: {
+          cacheId: siteConfig.site.title,
+          runtimeCaching: [
+            {
+              urlPattern: /\/$/,
+              handler: 'NetworkFirst',
+            },
+            {
+              urlPattern: /\.html$/,
+              handler: 'NetworkFirst',
+            },
+            {
+              urlPattern:
+                /^.*\.(jpg|png|mp4|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+              handler: 'StaleWhileRevalidate',
+            },
+          ],
+        },
+      },
+    ]
+  : [];
+
 const plugins = [
   {
     body: EleventyHtmlBasePlugin,
@@ -30,9 +55,6 @@ const plugins = [
   },
   {
     body: eleventyNavigationPlugin,
-  },
-  {
-    body: pluginPWA,
   },
   {
     body: syntaxHighlight,
@@ -52,8 +74,8 @@ const plugins = [
         background_color: siteConfig.manifestJson.backgroundColor,
         orientation: 'any',
       },
-    }
+    },
   },
 ];
 
-module.exports = [...plugins, ...productionPlugins];
+module.exports = [...plugins, ...pwaPluginConfig, ...productionPlugins];
