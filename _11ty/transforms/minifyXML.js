@@ -9,7 +9,8 @@ const XML_MINIFIER_OPTIONS = {
 
 const body = async (content, outputPath) => {
   if (IS_PRODUCTION && outputPath && outputPath.endsWith('.xml')) {
-    const minify = await minifyXML.minify;
+    const minifier = await minifyXML;
+    const { minify } = minifier;
     return minify(content, XML_MINIFIER_OPTIONS);
   }
   return content;
