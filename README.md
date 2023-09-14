@@ -64,7 +64,27 @@ Non-exhaustive list of steps to make the template **your own**. Some of them are
 - [ ] Decide if you want to use automated OpenGragh image generation + consider modifying their appearance to suit your taste (see `siteConfig.js` for more info)
 - [ ] Copy your existing static assets to `assets` folder. Note that the top of `assets` folder corresponds to the _root directory_ of your site (`_site`)
 - [ ] Modify anything else you don't like about the theme to match your preferences
-- [ ] Enjoy! :)
+- [ ] Enjoy! 😊
+
+## Optional customizations
+
+### Make titles optional + use file slugs for permalinks
+
+By default, the template assumes each post and each page to have a title and generates a permalink out using a `slugify` function. In other words, it converts `A title like this!` into `a-title-like-this`.
+
+If you want your posts to have no title, open `content/posts/posts.json` file and modify the following line:
+
+```json
+  "permalink": "{% if customPermalink %}{{ customPermalink }}{% else %}/{{ title | slugify }}/{% endif %}",
+```
+
+into the following:
+
+```json
+  "permalink": "{% if customPermalink %}{{ customPermalink }}{% else %}/{{ page.fileSlug }}/{% endif %}",
+```
+
+You can do the same for pages by modifying `content/pages/pages.json` file.
 
 ## Contributions
 
