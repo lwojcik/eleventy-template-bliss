@@ -1,5 +1,5 @@
 const moduleName = require('../helpers/moduleName');
-const minifyXML = require('minify-xml').minify;
+const minifyXML = import('minify-xml');
 const { IS_PRODUCTION } = require('../constants');
 
 const XML_MINIFIER_OPTIONS = {
@@ -7,9 +7,11 @@ const XML_MINIFIER_OPTIONS = {
   collapseWhitespaceInTexts: true,
 };
 
-const body = (content, outputPath) => {
+const body = async (content, outputPath) => {
   if (IS_PRODUCTION && outputPath && outputPath.endsWith('.xml')) {
-    return minifyXML(content, XML_MINIFIER_OPTIONS);
+    const minifier = await minifyXML;
+    const { minify } = minifier;
+    return minify(content, XML_MINIFIER_OPTIONS);
   }
   return content;
 };
