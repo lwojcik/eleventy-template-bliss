@@ -18,7 +18,7 @@ module.exports = {
   POST_COLLECTION_TAG_NAME: 'post',
   PAGE_COLLECTION_TAG_NAME: 'page',
   POSTS_PER_TAG_PAGE: siteConfig.tags.postsPerPage,
-  IS_PRODUCTION: process.env.NODE_ENV === 'production',
+  IS_PRODUCTION: process.env.ELEVENTY_ENV === 'production',
   SLUGIFY_CONFIG: {
     replacement: '-',
     lower: true,
