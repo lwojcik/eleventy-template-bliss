@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: eleventy-template-bliss
+    autoDeploy: false
+    runtime: static
+    buildCommand: npm run build
+    staticPublishPath: ./_site
