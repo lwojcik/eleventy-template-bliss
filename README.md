@@ -36,6 +36,10 @@ Vercel:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/lwojcik/eleventy-template-bliss)
 
+Render:
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/lwojcik/eleventy-template-bliss)
+
 ## Configuration
 
 See [`siteConfig.js`](./content/_data/siteConfig.js). Inline documentation is available in the file.
