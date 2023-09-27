@@ -1,16 +1,14 @@
 queue_rules:
   - name: default
     conditions:
-      - status-success=continuous-integration/appveyor/branch
-      - status-success=continuous-integration/appveyor/pr
+      - status-success=Vercel
 
 pull_request_rules:
   - name: Automatic merge of Snyk dependency upgrades (bot)
     conditions:
       - author=snyk-bot
       - -conflict
-      - status-success=continuous-integration/appveyor/branch
-      - status-success=continuous-integration/appveyor/pr
+      - status-success=Vercel
     actions:
       queue:
         method: squash
@@ -21,8 +19,7 @@ pull_request_rules:
       - title~=[Snyk]
       - title~=Upgrade
       - -conflict
-      - status-success=continuous-integration/appveyor/branch
-      - status-success=continuous-integration/appveyor/pr
+      - status-success=Vercel
     actions:
       queue:
         method: squash
@@ -31,8 +28,7 @@ pull_request_rules:
     conditions:
       - author=dependabot[bot]
       - -conflict
-      - status-success=continuous-integration/appveyor/branch
-      - status-success=continuous-integration/appveyor/pr
+      - status-success=Vercel
     actions:
       queue:
         method: squash
@@ -45,11 +41,9 @@ pull_request_rules:
         message: This pull request is now in conflicts. Could you fix it @{{author}}?
   - name: Automatic merge of owner-made PRs for main when CI passes and owner approves
     conditions:
-      - status-success=continuous-integration/appveyor/branch
-      - status-success=continuous-integration/appveyor/pr
+      - status-success=Vercel
       - author=lwojcik
       - base=main
-      - -conflict
       - label!=work-in-progress
       - label=ready-to-merge
     actions:
@@ -58,12 +52,7 @@ pull_request_rules:
         name: default
   - name: Automatic merge of PRs for main when CI passes and owner approves
     conditions:
-      - status-success=continuous-integration/appveyor/branch
-      - status-success=continuous-integration/appveyor/pr
-      - author!=lwojcik
-      - author!=snyk-bot
-      - author!=dependabot[bot]
-      - -conflict
+      - status-success=Vercel
       - base=main
       - label!=work-in-progress
       - approved-reviews-by=lwojcik
