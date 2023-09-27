@@ -18,6 +18,10 @@
       &:focus {
         background: var(--link-color);
         color: var(--background-color);
+
+        .count {
+          color: var(--background-color);
+        }
       }
 
       .count {
