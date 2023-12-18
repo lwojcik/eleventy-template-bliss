@@ -38,7 +38,7 @@
     "eslint": "^8.49.0",
     "eslint-plugin-import": "^2.28.1",
     "html-minifier-terser": "^7.2.0",
-    "jsdom": "^22.1.0",
+    "jsdom": "^23.0.0",
     "jsonminify": "^0.4.2",
     "lodash": "^4.17.21",
     "luxon": "^3.4.3",
