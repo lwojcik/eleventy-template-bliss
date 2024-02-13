@@ -60,13 +60,5 @@
   "pre-commit": [
     "format",
     "lint"
-  ],
-  "overrides": {
-    "@11ty/eleventy-img": {
-      "sharp": "0.32.5"
-    },
-    "eleventy-plugin-gen-favicons": {
-      "sharp": "0.32.5"
-    }
-  }
+  ]
 }
