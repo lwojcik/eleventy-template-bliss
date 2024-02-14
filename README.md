@@ -26,6 +26,18 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 
 https://eleventy-bliss.lkmt.us/
 
+## Setup
+
+```bash
+git clone https://github.com/lwojcik/eleventy-template-bliss
+cd eleventy-template-bliss
+npm install
+npm run dev # to launch the project for modifications
+npm run build # to build production version
+```
+
+**If you use Windows / Powershell 7:** If you get an error `Error: EBUSY: resource busy or locked` while starting the project, check [this issue](https://github.com/lwojcik/eleventy-template-bliss/issues/91) for possible workarounds.
+
 ## Instant deploy
 
 Netlify:
