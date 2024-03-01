@@ -7,7 +7,6 @@ const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const srcSet = require('./plugins/srcset');
 const pluginPWA = require('eleventy-plugin-pwa-v2');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const faviconsPlugin = require('eleventy-plugin-gen-favicons');
 
 const productionPlugins = IS_PRODUCTION
   ? [
@@ -58,23 +57,6 @@ const plugins = [
   },
   {
     body: syntaxHighlight,
-  },
-  {
-    body: faviconsPlugin,
-    options: {
-      manifestData: {
-        name: siteConfig.site.title,
-        lang: siteConfig.site.language,
-        short_name: siteConfig.site.title,
-        description: siteConfig.site.description,
-        start_url: '/',
-        scope: '/',
-        display: 'standalone',
-        theme_color: siteConfig.manifestJson.themeColor,
-        background_color: siteConfig.manifestJson.backgroundColor,
-        orientation: 'any',
-      },
-    },
   },
 ];
 

@@ -2,7 +2,7 @@
 
 **Bliss** is a single-column blog template for [Eleventy static site generator](https://11ty.dev) with strong focus on simplicity without sacrificing functionality.
 
-It is a modified and improved version of the theme running [Offbeat Bits - my personal blog](https://offbeatbits.com/).
+It is a modified and improved version of the theme running [my personal blog](https://blog.lukaszwojcik.net/).
 
 ## Features
 
@@ -10,7 +10,6 @@ It is a modified and improved version of the theme running [Offbeat Bits - my pe
 - **sharing buttons for popular social media** (including Mastodon!) + copying post URL to clipboard
 - **Mastodon integration:** generating `.well-known/webfinger` file + automatic generation of `<link rel="me">` tags for site ownership verification
 - **translation ready** (support for custom language tags + separate file with static phrases)
-- **automatic favicon generation**
 - **manifest file** for PWA
 - **automatic OpenGraph image generation**
 - **code syntax highlighting** with PrismJS using [Eleventy syntax highlighting plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/)
@@ -35,8 +34,6 @@ npm install
 npm run dev # to launch the project for modifications
 npm run build # to build production version
 ```
-
-**If you use Windows / Powershell 7:** If you get an error `Error: EBUSY: resource busy or locked` while starting the project, check [this issue](https://github.com/lwojcik/eleventy-template-bliss/issues/91) for possible workarounds.
 
 ## Instant deploy
 
@@ -75,7 +72,8 @@ Non-exhaustive list of steps to make the template **your own**. Some of them are
 - [ ] If you use post disclaimers at the beginning of your posts - consider using the built-in disclaimer feature - see [`06-10-sample-post-33-disclaimer.md`](./content/posts/2023/06-10-sample-post-33-disclaimer.md) or [`05-31-sample-post-32-linked-disclaimer.md`](./content/posts/2023/05-31-sample-post-32-linked-disclaimer.md) for reference
 - [ ] Add your own pages - use one of the existing placeholder pages as a reference
 - [ ] Add / remove meta pages in the footer - see [`siteConfig.js`](./content/_data/siteConfig.js)
-- [ ] Replace a favicon file (`favicon.svg`) with your own - only one file is needed, the remaining ones will be generated on build
+- [ ] Replace a favicon files (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`) with your own
+- [ ] Update `manifest.webmanifest` file with data relevant to your site
 - [ ] Replace OpenGraph images with ones relevant to your site
 - [ ] Decide if you want to use automated OpenGragh image generation + consider modifying their appearance to suit your taste (see `siteConfig.js` for more info)
 - [ ] Copy your existing static assets to `assets` folder. Note that the top of `assets` folder corresponds to the _root directory_ of your site (`_site`)
@@ -101,6 +99,12 @@ into the following:
 ```
 
 You can do the same for pages by modifying `content/pages/pages.json` file.
+
+### Automatic favicon generation
+
+Until version 2.4.0 Bliss was bundled with a [favicon generation plugin](https://www.npmjs.com/package/eleventy-plugin-gen-favicons). Due to unresolved bugs this plugin is no longer included with the template.
+
+If you want to reimplement it yourself, change history from [this pull request](https://github.com/lwojcik/eleventy-template-bliss/pull/99) may be helpful.
 
 ## Contributions
 
