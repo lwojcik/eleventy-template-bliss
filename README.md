@@ -49,6 +49,38 @@ Render:
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/lwojcik/eleventy-template-bliss)
 
+## Deploy to GitHub Pages
+
+Follow the steps below:
+
+1. Fork the repository to your GitHub account.
+2. In `.eleventy.js` file, find the final `return` section and add `pathPrefix` property. The value should be equal to your repository's name:
+
+   ```js
+     return {
+      // ...
+      pathPrefix: 'your-repo-name',
+    };
+
+   ```
+
+3. In your repository, make sure GitHub Pages are set up in the _Pages_ tab of your repository settings:
+   - **Source** - should be set up to _Deploy from a branch_
+   - **Branch** - add a branch called `gh-pages`
+4. In `Actions > General` tab, in the _Workflow permissions_ section, select `Read and write permissions`
+5. Go to `Actions` tabs of your repository. From the list of actions select `Build and deploy to GitHub Pages`
+6. Click `Run workflow`.
+7. If the workflow runs successfully, your page will be available at `https://yourusername.github.io/your-repo-name`.
+
+By default, the GitHub action workflow for publishing on GitHub Pages is set to be run manually. If you want it to run on each push to `main` branch, open `.github/workflows/build-to-gh-pages.yml` and edit `on` section as follows:
+
+```yaml
+on:
+  workflow_dispatch: # This enables the action to be launched manually from GitHub Actions tab
+  push:
+    branches: ['main'] # This makes the action run on each push to main branch
+```
+
 ## Configuration
 
 See [`siteConfig.js`](./content/_data/siteConfig.js). Inline documentation is available in the file.
@@ -72,10 +104,10 @@ Non-exhaustive list of steps to make the template **your own**. Some of them are
 - [ ] If you use post disclaimers at the beginning of your posts - consider using the built-in disclaimer feature - see [`06-10-sample-post-33-disclaimer.md`](./content/posts/2023/06-10-sample-post-33-disclaimer.md) or [`05-31-sample-post-32-linked-disclaimer.md`](./content/posts/2023/05-31-sample-post-32-linked-disclaimer.md) for reference
 - [ ] Add your own pages - use one of the existing placeholder pages as a reference
 - [ ] Add / remove meta pages in the footer - see [`siteConfig.js`](./content/_data/siteConfig.js)
-- [ ] Replace a favicon files (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`) with your own
+- [ ] Replace favicon files (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`) with your own
 - [ ] Update `manifest.webmanifest` file with data relevant to your site
 - [ ] Replace OpenGraph images with ones relevant to your site
-- [ ] Decide if you want to use automated OpenGragh image generation + consider modifying their appearance to suit your taste (see `siteConfig.js` for more info)
+- [ ] Decide if you want to use automated OpenGraph image generation + consider modifying their appearance to suit your taste (see `siteConfig.js` for more info)
 - [ ] Copy your existing static assets to `assets` folder. Note that the top of `assets` folder corresponds to the _root directory_ of your site (`_site`)
 - [ ] Modify anything else you don't like about the theme to match your preferences
 - [ ] Enjoy! 😊

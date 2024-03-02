@@ -42,21 +42,33 @@ const assetsDir = join(process.cwd(), 'assets');
 const buildDir = '_site';
 
 // Map filenames to types and width, and then resize
-async function srcset(filename, hash, format, metadataWidth) {
+async function srcset(filename, hash, format, metadataWidth, pathPrefix) {
   // Create a map of all file names
   const names = await Promise.all(
-    widths.map((width) => resize(filename, width, hash, format, metadataWidth))
+    widths.map((width) => resize(filename, width, hash, format, metadataWidth, pathPrefix))
   );
-  return names.map((n, i) => `${n} ${widths[i]}w`).join(', ');
+  
+  const normalizedName = (name) => pathPrefix.length > 1
+    ? join(pathPrefix, name)
+    : name;
+
+  return names.map((n, i) => normalizedName(`${n} ${widths[i]}w`)).join(', ');
 }
 
-async function resize(filename, width, hash, format, metadataWidth) {
-  const out = sizedName(filename, width, hash, format);
+async function resize(filename, width, hash, format, metadataWidth, pathPrefix) {
+  const out = pathPrefix.length > 1
+    ? sizedName(filename, width, hash, format).split(pathPrefix)[1]
+    : sizedName(filename, width, hash, format);
+
   if (existsSync(join(buildDir, out))) {
     return out;
   }
 
-  const file = join(assetsDir, filename);
+  const normalizedFileName = pathPrefix.length > 1
+    ? filename.split(pathPrefix)[1]
+    : filename;
+
+  const file = join(assetsDir, normalizedFileName);
 
   const resizeWidth = metadataWidth < width ? metadataWidth : width;
 
@@ -66,7 +78,7 @@ async function resize(filename, width, hash, format, metadataWidth) {
       quality: 80,
       reductionEffort: 6,
     })
-    .toFile(buildDir + out);
+    .toFile(join(buildDir, out));
 
   return out;
 }
@@ -86,12 +98,14 @@ function hashedName(filename, hash) {
   return filename.replace(extname(filename), '-' + hash + extname(filename));
 }
 
-async function setSrcset(img, src, hash, format, metadataWidth) {
-  img.setAttribute('srcset', await srcset(src, hash, format, metadataWidth));
+async function setSrcset(img, src, hash, format, metadataWidth, pathPrefix) {
+  img.setAttribute('srcset', await srcset(src, hash, format, metadataWidth, pathPrefix));
 }
 
-const processImage = async (el) => {
-  const filename = el.getAttribute('src');
+const processImage = async (el, pathPrefix) => {
+  const filename = pathPrefix.length > 1
+    ? `/${el.getAttribute('src').split(pathPrefix)[1]}`
+    : el.getAttribute('src');
 
   if (/^(https?:\/\/|\/\/)/i.test(filename)) {
     return;
@@ -119,9 +133,11 @@ const processImage = async (el) => {
   const webp = doc.createElement('source');
   const jpeg = doc.createElement('source');
 
-  await setSrcset(webp, filename, hash, 'webp', metadata.width);
+  const srcName = pathPrefix.length > 1 ? join(pathPrefix, filename) : filename;
+
+  await setSrcset(webp, srcName, hash, 'webp', metadata.width, pathPrefix);
   webp.setAttribute('type', 'image/webp');
-  await setSrcset(jpeg, filename, hash, 'jpeg', metadata.width);
+  await setSrcset(jpeg, srcName, hash, 'jpeg', metadata.width, pathPrefix);
   jpeg.setAttribute('type', 'image/jpeg');
 
   picture.appendChild(webp);
@@ -135,7 +151,7 @@ const processImage = async (el) => {
   );
 };
 
-const convert = async (rawContent, outputPath) => {
+const convert = async (rawContent, outputPath, pathPrefix) => {
   let content = rawContent;
 
   const targetDirectory = join('.', buildDir, 'images');
@@ -151,7 +167,7 @@ const convert = async (rawContent, outputPath) => {
     ];
 
     if (images.length > 0) {
-      await Promise.all(images.map((i) => processImage(i, outputPath)));
+      await Promise.all(images.map((i) => processImage(i, pathPrefix)));
       content = dom.serialize();
     }
   }
@@ -162,6 +178,8 @@ const convert = async (rawContent, outputPath) => {
 module.exports = {
   initArguments: {},
   configFunction: async (eleventyConfig = {}) => {
-    eleventyConfig.addTransform('imageConversion', convert);
+    eleventyConfig.addTransform('imageConversion', (content, outputPath) =>
+      convert(content, outputPath, eleventyConfig.pathPrefix)
+    );
   },
 };
