@@ -49,6 +49,29 @@ Render:
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/lwojcik/eleventy-template-bliss)
 
+## Deploy to GitHub Pages
+
+Follow the steps below:
+
+1. Fork the repository to your GitHub account.
+2. In `.eleventy.js` file, find the final `return` section and add `pathPrefix` property. The value should be equal to your repository's name:
+
+   ```js
+     return {
+      // ...
+      pathPrefix: 'your-repo-name',
+    };
+
+   ```
+
+3. In your repository, make sure GitHub Pages are set up in the _Pages_ tab of your repository settings:
+   - **Source** - should be set up to _Deploy from a branch_
+   - **Branch** - add a branch called `gh-pages`
+4. In `Actions > General` tab, in the _Workflow permissions_ section, select `Read and write permissions`
+5. Go to `Actions` tabs of your repository. From the list of actions select `Build and deploy to GitHub Pages`
+6. Click `Run workflow`.
+7. If the workflow runs successfully, your page will be available at `https://yourusername.github.io/your-repo-name`.
+
 ## Configuration
 
 See [`siteConfig.js`](./content/_data/siteConfig.js). Inline documentation is available in the file.
