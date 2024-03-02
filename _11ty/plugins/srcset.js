@@ -52,7 +52,10 @@ async function srcset(filename, hash, format, metadataWidth, pathPrefix) {
 }
 
 async function resize(filename, width, hash, format, metadataWidth, pathPrefix) {
-  const out = sizedName(filename, width, hash, format).split(pathPrefix)[1];
+  const out = pathPrefix.length > 1
+    ? sizedName(filename, width, hash, format).split(pathPrefix)[1]
+    : sizedName(filename, width, hash, format);
+
   if (existsSync(join(buildDir, out))) {
     return out;
   }
@@ -72,7 +75,11 @@ async function resize(filename, width, hash, format, metadataWidth, pathPrefix) 
   // console.log('out name:');
   // console.log(out);
 
-  const file = join(assetsDir, filename.split(pathPrefix)[1]);
+  const normalizedFileName = pathPrefix.length > 1
+    ? filename.split(pathPrefix)[1]
+    : filename;
+
+  const file = join(assetsDir, normalizedFileName);
 
   console.log('file:');
   console.log(file);
@@ -140,9 +147,11 @@ const processImage = async (el, pathPrefix) => {
   const webp = doc.createElement('source');
   const jpeg = doc.createElement('source');
 
-  await setSrcset(webp, join(pathPrefix, filename), hash, 'webp', metadata.width, pathPrefix);
+  const srcName = pathPrefix.length > 1 ? join(pathPrefix, filename) : filename;
+
+  await setSrcset(webp, srcName, hash, 'webp', metadata.width, pathPrefix);
   webp.setAttribute('type', 'image/webp');
-  await setSrcset(jpeg, join(pathPrefix, filename), hash, 'jpeg', metadata.width, pathPrefix);
+  await setSrcset(jpeg, srcName, hash, 'jpeg', metadata.width, pathPrefix);
   jpeg.setAttribute('type', 'image/jpeg');
 
   picture.appendChild(webp);
@@ -183,6 +192,7 @@ const convert = async (rawContent, outputPath, pathPrefix) => {
 module.exports = {
   initArguments: {},
   configFunction: async (eleventyConfig = {}) => {
+    console.log(eleventyConfig.pathPrefix);
     eleventyConfig.addTransform('imageConversion', (content, outputPath) =>
       convert(content, outputPath, eleventyConfig.pathPrefix)
     );
