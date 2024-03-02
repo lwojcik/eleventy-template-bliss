@@ -72,6 +72,15 @@ Follow the steps below:
 6. Click `Run workflow`.
 7. If the workflow runs successfully, your page will be available at `https://yourusername.github.io/your-repo-name`.
 
+By default, the GitHub action workflow for publishing on GitHub Pages is set to be run manually. If you want it to run on each push to `main` branch, open `.github/workflows/build-to-gh-pages.yml` and edit `on` section as follows:
+
+```yaml
+on:
+  workflow_dispatch: # This enables the action to be launched manually from GitHub Actions tab
+  push:
+    branches: ['main'] # This makes the action run on each push to main branch
+```
+
 ## Configuration
 
 See [`siteConfig.js`](./content/_data/siteConfig.js). Inline documentation is available in the file.
