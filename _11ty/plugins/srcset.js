@@ -47,7 +47,12 @@ async function srcset(filename, hash, format, metadataWidth, pathPrefix) {
   const names = await Promise.all(
     widths.map((width) => resize(filename, width, hash, format, metadataWidth, pathPrefix))
   );
-  return names.map((n, i) => join(pathPrefix, `${n} ${widths[i]}w`)).join(', ');
+  
+  const normalizedName = (name) => pathPrefix.length > 1
+    ? join(pathPrefix, name)
+    : name;
+
+  return names.map((n, i) => normalizedName(`${n} ${widths[i]}w`)).join(', ');
 }
 
 async function resize(filename, width, hash, format, metadataWidth, pathPrefix) {
