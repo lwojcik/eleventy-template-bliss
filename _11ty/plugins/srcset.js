@@ -42,21 +42,40 @@ const assetsDir = join(process.cwd(), 'assets');
 const buildDir = '_site';
 
 // Map filenames to types and width, and then resize
-async function srcset(filename, hash, format, metadataWidth) {
+async function srcset(filename, hash, format, metadataWidth, pathPrefix) {
   // Create a map of all file names
   const names = await Promise.all(
-    widths.map((width) => resize(filename, width, hash, format, metadataWidth))
+    widths.map((width) => resize(filename, width, hash, format, metadataWidth, pathPrefix))
   );
-  return names.map((n, i) => `${n} ${widths[i]}w`).join(', ');
+  console.log(names);
+  return names.map((n, i) => join(pathPrefix, `${n} ${widths[i]}w`)).join(', ');
 }
 
-async function resize(filename, width, hash, format, metadataWidth) {
-  const out = sizedName(filename, width, hash, format);
+async function resize(filename, width, hash, format, metadataWidth, pathPrefix) {
+  const out = sizedName(filename, width, hash, format).split(pathPrefix)[1];
   if (existsSync(join(buildDir, out))) {
     return out;
   }
 
-  const file = join(assetsDir, filename);
+  // console.log('path prefix:');
+  // console.log(pathPrefix);
+
+  // console.log('filename:');
+  // console.log(filename);
+
+  // console.log('assets dir:');
+  // console.log(assetsDir);
+
+  // console.log('build dir:');
+  // console.log(buildDir);
+
+  // console.log('out name:');
+  // console.log(out);
+
+  const file = join(assetsDir, filename.split(pathPrefix)[1]);
+
+  console.log('file:');
+  console.log(file);
 
   const resizeWidth = metadataWidth < width ? metadataWidth : width;
 
@@ -66,7 +85,7 @@ async function resize(filename, width, hash, format, metadataWidth) {
       quality: 80,
       reductionEffort: 6,
     })
-    .toFile(buildDir + out);
+    .toFile(join(buildDir, out));
 
   return out;
 }
@@ -86,12 +105,12 @@ function hashedName(filename, hash) {
   return filename.replace(extname(filename), '-' + hash + extname(filename));
 }
 
-async function setSrcset(img, src, hash, format, metadataWidth) {
-  img.setAttribute('srcset', await srcset(src, hash, format, metadataWidth));
+async function setSrcset(img, src, hash, format, metadataWidth, pathPrefix) {
+  img.setAttribute('srcset', await srcset(src, hash, format, metadataWidth, pathPrefix));
 }
 
 const processImage = async (el, pathPrefix) => {
-  const filename = pathPrefix
+  const filename = pathPrefix.length > 1
     ? `/${el.getAttribute('src').split(pathPrefix)[1]}`
     : el.getAttribute('src');
 
@@ -121,9 +140,9 @@ const processImage = async (el, pathPrefix) => {
   const webp = doc.createElement('source');
   const jpeg = doc.createElement('source');
 
-  await setSrcset(webp, filename, hash, 'webp', metadata.width);
+  await setSrcset(webp, join(pathPrefix, filename), hash, 'webp', metadata.width, pathPrefix);
   webp.setAttribute('type', 'image/webp');
-  await setSrcset(jpeg, filename, hash, 'jpeg', metadata.width);
+  await setSrcset(jpeg, join(pathPrefix, filename), hash, 'jpeg', metadata.width, pathPrefix);
   jpeg.setAttribute('type', 'image/jpeg');
 
   picture.appendChild(webp);
