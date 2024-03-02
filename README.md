@@ -72,10 +72,10 @@ Non-exhaustive list of steps to make the template **your own**. Some of them are
 - [ ] If you use post disclaimers at the beginning of your posts - consider using the built-in disclaimer feature - see [`06-10-sample-post-33-disclaimer.md`](./content/posts/2023/06-10-sample-post-33-disclaimer.md) or [`05-31-sample-post-32-linked-disclaimer.md`](./content/posts/2023/05-31-sample-post-32-linked-disclaimer.md) for reference
 - [ ] Add your own pages - use one of the existing placeholder pages as a reference
 - [ ] Add / remove meta pages in the footer - see [`siteConfig.js`](./content/_data/siteConfig.js)
-- [ ] Replace a favicon files (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`) with your own
+- [ ] Replace favicon files (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`) with your own
 - [ ] Update `manifest.webmanifest` file with data relevant to your site
 - [ ] Replace OpenGraph images with ones relevant to your site
-- [ ] Decide if you want to use automated OpenGragh image generation + consider modifying their appearance to suit your taste (see `siteConfig.js` for more info)
+- [ ] Decide if you want to use automated OpenGraph image generation + consider modifying their appearance to suit your taste (see `siteConfig.js` for more info)
 - [ ] Copy your existing static assets to `assets` folder. Note that the top of `assets` folder corresponds to the _root directory_ of your site (`_site`)
 - [ ] Modify anything else you don't like about the theme to match your preferences
 - [ ] Enjoy! 😊
