@@ -47,7 +47,6 @@ async function srcset(filename, hash, format, metadataWidth, pathPrefix) {
   const names = await Promise.all(
     widths.map((width) => resize(filename, width, hash, format, metadataWidth, pathPrefix))
   );
-  console.log(names);
   return names.map((n, i) => join(pathPrefix, `${n} ${widths[i]}w`)).join(', ');
 }
 
@@ -60,29 +59,11 @@ async function resize(filename, width, hash, format, metadataWidth, pathPrefix) 
     return out;
   }
 
-  // console.log('path prefix:');
-  // console.log(pathPrefix);
-
-  // console.log('filename:');
-  // console.log(filename);
-
-  // console.log('assets dir:');
-  // console.log(assetsDir);
-
-  // console.log('build dir:');
-  // console.log(buildDir);
-
-  // console.log('out name:');
-  // console.log(out);
-
   const normalizedFileName = pathPrefix.length > 1
     ? filename.split(pathPrefix)[1]
     : filename;
 
   const file = join(assetsDir, normalizedFileName);
-
-  console.log('file:');
-  console.log(file);
 
   const resizeWidth = metadataWidth < width ? metadataWidth : width;
 
@@ -192,7 +173,6 @@ const convert = async (rawContent, outputPath, pathPrefix) => {
 module.exports = {
   initArguments: {},
   configFunction: async (eleventyConfig = {}) => {
-    console.log(eleventyConfig.pathPrefix);
     eleventyConfig.addTransform('imageConversion', (content, outputPath) =>
       convert(content, outputPath, eleventyConfig.pathPrefix)
     );
