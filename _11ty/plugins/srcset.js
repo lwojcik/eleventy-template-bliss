@@ -90,8 +90,10 @@ async function setSrcset(img, src, hash, format, metadataWidth) {
   img.setAttribute('srcset', await srcset(src, hash, format, metadataWidth));
 }
 
-const processImage = async (el) => {
-  const filename = el.getAttribute('src');
+const processImage = async (el, pathPrefix) => {
+  const filename = pathPrefix
+    ? `/${el.getAttribute('src').split(pathPrefix)[1]}`
+    : el.getAttribute('src');
 
   if (/^(https?:\/\/|\/\/)/i.test(filename)) {
     return;
@@ -135,7 +137,7 @@ const processImage = async (el) => {
   );
 };
 
-const convert = async (rawContent, outputPath) => {
+const convert = async (rawContent, outputPath, pathPrefix) => {
   let content = rawContent;
 
   const targetDirectory = join('.', buildDir, 'images');
@@ -151,7 +153,7 @@ const convert = async (rawContent, outputPath) => {
     ];
 
     if (images.length > 0) {
-      await Promise.all(images.map((i) => processImage(i, outputPath)));
+      await Promise.all(images.map((i) => processImage(i, pathPrefix)));
       content = dom.serialize();
     }
   }
@@ -162,6 +164,8 @@ const convert = async (rawContent, outputPath) => {
 module.exports = {
   initArguments: {},
   configFunction: async (eleventyConfig = {}) => {
-    eleventyConfig.addTransform('imageConversion', convert);
+    eleventyConfig.addTransform('imageConversion', (content, outputPath) =>
+      convert(content, outputPath, eleventyConfig.pathPrefix)
+    );
   },
 };
