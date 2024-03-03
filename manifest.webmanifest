@@ -1,0 +1,24 @@
+{
+  "name": "Bliss",
+  "lang": "en",
+  "short_name": "Bliss",
+  "description": "Simple Eleventy blog template",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#1773cf",
+  "background_color": "#1773cf",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  cache-control: max-age=3600,public
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+/.well-known/*
+  cache-control: max-age=31536000,public,immutable
+
+/images/*
+  cache-control: max-age=31536000,public,immutable
+
+/video/*
+  cache-control: max-age=31536000,public,immutable
+
+/fonts/*
+  cache-control: max-age=31536000,public,immutable
+
+/favicon.*
+  cache-control: max-age=31536000,public,immutable
+
+/icon*.png
+  cache-control: max-age=31536000,public,immutable
+
+/apple-touch-icon.png
+  cache-control: max-age=31536000,public,immutable
+
+/manifest.webmanifest
+  Content-Type: application/manifest+json
+  cache-control: max-age=31536000,public,immutable
