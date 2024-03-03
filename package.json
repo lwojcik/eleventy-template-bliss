@@ -5,6 +5,7 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build:eleventy": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy --quiet",
+    "build-gh-pages": "npm run build:eleventy -- --pathprefix=/eleventy-template-bliss/",
     "build": "npm-run-all build:*",
     "postbuild": "npm run minify:js",
     "clean": "rimraf _site",
