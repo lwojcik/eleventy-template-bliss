@@ -54,15 +54,19 @@ Render:
 Follow the steps below:
 
 1. Fork the repository to your GitHub account.
-2. In `.eleventy.js` file, find the final `return` section and add `pathPrefix` property. The value should be equal to your repository's name:
+2. In `package.json`, find the following line:
 
-   ```js
-     return {
-      // ...
-      pathPrefix: 'your-repo-name',
-    };
+```json
+{
+  "scripts": {
+    // ...
+    "build-gh-pages": "npm run build:sass; npm run build:eleventy -- --pathprefix=/eleventy-template-bliss/",
+    //...
+  }
+}
+```
 
-   ```
+Replace `eleventy-template-bliss` with the name of your repository.
 
 3. In your repository, make sure GitHub Pages are set up in the _Pages_ tab of your repository settings:
    - **Source** - should be set up to _Deploy from a branch_
