@@ -6,7 +6,7 @@
     "prebuild": "npm run clean",
     "build:eleventy": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy --quiet",
     "prebuild-gh-pages": "npm run clean",
-    "build-gh-pages": "npm run build:sass; npm run build:eleventy -- --pathprefix=/bliss-pathprefix-test/",
+    "build-gh-pages": "npm run build:sass; npm run build:eleventy -- --pathprefix=/eleventy-template-bliss/",
     "postbuild-gh-pages": "npm run minify:js",
     "build": "npm-run-all build:*",
     "postbuild": "npm run minify:js",
