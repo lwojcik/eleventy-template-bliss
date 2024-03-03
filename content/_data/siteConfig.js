@@ -57,8 +57,8 @@ module.exports = {
       name: 'Bliss',
       url: 'https://github.com/lwojcik/eleventy-template-bliss',
       credit: {
-        name: 'Offbeat Bits',
-        url: 'https://offbeatbits.com',
+        name: 'Łukasz Wójcik',
+        url: 'https://lukaszwojcik.net/',
       },
     },
   },
