@@ -54,27 +54,12 @@ Render:
 Follow the steps below:
 
 1. Fork the repository to your GitHub account.
-2. In `package.json`, find the following line:
-
-```json
-{
-  "scripts": {
-    // ...
-    "build-gh-pages": "npm run build:sass; npm run build:eleventy -- --pathprefix=/eleventy-template-bliss/",
-    //...
-  }
-}
-```
-
-Replace `eleventy-template-bliss` with the name of your repository.
-
-3. In your repository, make sure GitHub Pages are set up in the _Pages_ tab of your repository settings:
-   - **Source** - should be set up to _Deploy from a branch_
-   - **Branch** - add a branch called `gh-pages`
-4. In `Actions > General` tab, in the _Workflow permissions_ section, select `Read and write permissions`
-5. Go to `Actions` tabs of your repository. From the list of actions select `Build and deploy to GitHub Pages`
-6. Click `Run workflow`.
-7. If the workflow runs successfully, your page will be available at `https://yourusername.github.io/your-repo-name`.
+1. In your repository, make sure GitHub Pages are set up in the _Pages_ tab of your repository settings:
+   - **Source** - should be set up to _GitHub Actions_
+1. In `Actions > General` section of your repository's settings, under the _Workflow permissions_ sub-section, select `Read and write permissions`
+1. Go to `Actions` tabs of your repository. From the list of actions select `Build and deploy to GitHub Pages`
+1. Click `Run workflow`.
+1. If the workflow runs successfully, your page will be available at `https://yourusername.github.io/your-repo-name`.
 
 By default, the GitHub action workflow for publishing on GitHub Pages is set to be run manually. If you want it to run on each push to `main` branch, open `.github/workflows/build-to-gh-pages.yml` and edit `on` section as follows:
 
