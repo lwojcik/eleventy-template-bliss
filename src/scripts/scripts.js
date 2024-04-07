@@ -222,7 +222,7 @@ window.addEventListener('DOMContentLoaded', () => {
       .split(/\/[0-9]+\//)[0]
       .replace(/\/+$/, '');
 
-    const newLocation = pageNumber === 1 ? pageUrl : `${pageUrl}/${pageNumber}`;
+    const newLocation = pageNumber === 1 ? pageUrl : `${pageUrl}/${pageNumber}/`;
 
     window.location.href = newLocation;
   };
