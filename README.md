@@ -69,9 +69,8 @@ Follow the steps below:
 Replace `eleventy-template-bliss` with the name of your repository.
 
 3. In your repository, make sure GitHub Pages are set up in the _Pages_ tab of your repository settings:
-   - **Source** - should be set up to _Deploy from a branch_
-   - **Branch** - add a branch called `gh-pages`
-4. In `Actions > General` tab, in the _Workflow permissions_ section, select `Read and write permissions`
+   - **Source** - should be set up to _GitHub Actions_
+4. In `Actions > General` section of your repository's settings, under the _Workflow permissions_ sub-section, select `Read and write permissions`
 5. Go to `Actions` tabs of your repository. From the list of actions select `Build and deploy to GitHub Pages`
 6. Click `Run workflow`.
 7. If the workflow runs successfully, your page will be available at `https://yourusername.github.io/your-repo-name`.
