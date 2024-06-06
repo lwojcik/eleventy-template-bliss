@@ -55,7 +55,7 @@
     "require-dir": "^1.2.0",
     "rimraf": "^5.0.5",
     "sass": "^1.74.1",
-    "sharp": "0.33.3",
+    "sharp": "0.33.4",
     "slugify": "^1.6.6",
     "sort-package-json": "^2.10.0",
     "terser": "^5.30.3"
