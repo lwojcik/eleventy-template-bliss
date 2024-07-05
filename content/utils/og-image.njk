@@ -39,14 +39,14 @@ eleventyExcludeFromCollections: true
     <rect width="100%" height="100%" fill="{{ ogImageBackgroundColor }}" />
 
     <text font-family="'Georgia', Times, serif" font-size="30" fill="{{ ogImageTextColor }}">
-        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint - 90}}">{{ siteConfig.site.title }}</tspan>
+        <tspan x="{{ headlineOffset }}" y="{{ verticalStartingPoint - 90 }}">{{ siteConfig.site.title }}</tspan>
     </text>
     
     <text id="text" font-family="'Georgia', Times, serif" fill="{{
-    ogImageTextColor }}" font-size="{{fontSize}}" font-weight="bold">
+    ogImageTextColor }}" font-size="{{ fontSize }}" font-weight="bold">
     {% for line in titleInLines %}
-        <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint + loop.index0
-        * lineHeight}}">{{ line }}</tspan>
+        <tspan x="{{ headlineOffset }}" y="{{ verticalStartingPoint + loop.index0
+        * lineHeight }}">{{ line }}</tspan>
     {% endfor %}
     </text>
 
