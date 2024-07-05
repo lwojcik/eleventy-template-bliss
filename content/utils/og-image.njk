@@ -43,7 +43,7 @@ eleventyExcludeFromCollections: true
     </text>
     
     <text id="text" font-family="'Georgia', Times, serif" fill="{{
-    ogImageTextColor }}" font-size={{fontSize}} font-weight="bold">
+    ogImageTextColor }}" font-size="{{fontSize}}" font-weight="bold">
     {% for line in titleInLines %}
         <tspan x="{{ headlineOffset }}" y="{{verticalStartingPoint + loop.index0
         * lineHeight}}">{{ line }}</tspan>
