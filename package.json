@@ -38,7 +38,6 @@
     "crypto-js": "^4.2.0",
     "eleventy-plugin-emoji": "^1.1.0",
     "eslint": "^9.7.0",
-    "eslint-plugin-import": "^2.29.1",
     "html-minifier-terser": "^7.2.0",
     "jsdom": "^24.0.0",
     "jsonminify": "^0.4.2",
@@ -62,5 +61,11 @@
   "pre-commit": [
     "format",
     "lint"
-  ]
+  ],
+  "devDependencies": {
+    "@eslint/compat": "^1.1.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.11.0",
+    "globals": "^15.9.0"
+  }
 }
