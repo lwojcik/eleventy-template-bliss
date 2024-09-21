@@ -124,9 +124,9 @@ module.exports = {
     ogImageTextColor: '#fff',
   },
   // ---------------------------------------------------------------------------
-  // Default settings for Twitter graph tags
+  // Default settings for X graph tags
   // ---------------------------------------------------------------------------
-  twitter: {
+  x: {
     card: 'summary_large_image',
     image: '/images/share-1200x600.jpg',
   },
@@ -161,7 +161,7 @@ module.exports = {
   // Settings for post share buttons
   //
   // Possible options:
-  // mastodon, twitter, linkedin, facebook, hackernews, clipboard
+  // mastodon, x, linkedin, facebook, hackernews, clipboard
   //
   // 'clipboard' is an option to copy the article URL to user's clipboard
   //
@@ -171,7 +171,7 @@ module.exports = {
   // ---------------------------------------------------------------------------
   shareButtons: [
     'mastodon',
-    'twitter',
+    'x',
     'linkedin',
     'facebook',
     'hackernews',
