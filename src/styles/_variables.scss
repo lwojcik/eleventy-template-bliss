@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Base values
 
 $baseSize: 16px;
@@ -17,11 +19,24 @@ $serifFontFamily: 'Merriweather', $baseSerifFontStack;
 $serifBoldFontFamily: 'Merriweather Bold', $baseSerifFontStack;
 $serifItalicFontFamily: 'Merriweather Italic', $baseSerifFontStack;
 $serifBoldItalicFontFamily: 'Merriweather Bold Italic', $baseSerifFontStack;
-$sansSerifFontFamily: PT Sans, ui-sans-serif, system-ui, -apple-system,
-  BlinkMacSystemFont, Segoe UI, Roboto, SF Pro, Helvetica, Arial, Noto Sans,
+$sansSerifFontFamily:
+  PT Sans,
+  ui-sans-serif,
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  Segoe UI,
+  Roboto,
+  SF Pro,
+  Helvetica,
+  Arial,
+  Noto Sans,
   sans-serif;
 $arialFamily: Arial, Helvetica, sans-serif;
-$emojiFontFamily: Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+$emojiFontFamily:
+  Apple Color Emoji,
+  Segoe UI Emoji,
+  Segoe UI Symbol,
   Noto Color Emoji;
 
 // Spacings
@@ -59,30 +74,36 @@ $longTransitionTime: 0.2s;
 
 $lightBackgroundColor: $white;
 $lightTextColor: $black;
-$lightLinkColor: darken($baseColor, 5%);
-$lightLinkHoverColor: lighten($lightLinkColor, 15%);
+$lightLinkColor: color.adjust($baseColor, $lightness: -5%);
+$lightLinkHoverColor: color.adjust($lightLinkColor, $lightness: 15%);
 $lightPostMetaColor: $lightTextColor;
-$lightTopMetaColor: lighten($black, 40%);
+$lightTopMetaColor: color.adjust($black, $lightness: 40%);
 $lightBottomMetaColor: $lightTopMetaColor;
 $lightNoticeBorderColor: $baseColor;
-$lightNoticeBackgroundColor: lighten($baseColor, 45%);
-$lightCodeBackgroundColor: lighten($baseColor, 45%);
-$lightCodeSelectionBackgroundColor: lighten($baseColor, 33%);
-$lightMarkBackgroundColor: lighten($baseColor, 55%);
+$lightNoticeBackgroundColor: color.adjust($baseColor, $lightness: 45%);
+$lightCodeBackgroundColor: color.adjust($baseColor, $lightness: 45%);
+$lightCodeSelectionBackgroundColor: color.adjust($baseColor, $lightness: 33%);
+$lightMarkBackgroundColor: color.adjust($baseColor, $lightness: 55%);
 $lightMarkColor: $black;
 $lightThemeSwitcherColor: $lightLinkColor;
 $lightMobileMenuBackgroundColor: $lightBackgroundColor;
-$lightMobileMenuSeparatorColor: darken($white, 8%);
-$lightScrollUpArrowBackgroundColor: lighten($lightLinkColor, 10%);
-$lightScrollUpArrowHoverBackgroundColor: darken(
+$lightMobileMenuSeparatorColor: color.adjust($white, $lightness: -8%);
+$lightScrollUpArrowBackgroundColor: color.adjust(
+  $lightLinkColor,
+  $lightness: 10%
+);
+$lightScrollUpArrowHoverBackgroundColor: color.adjust(
   $lightScrollUpArrowBackgroundColor,
-  7%
+  $lightness: 7%
 );
 $lightPaginationColor: $lightTextColor;
 $lightPaginationFocusBackgroundColor: $lightNoticeBackgroundColor;
-$lightPaginationInactiveColor: lighten($lightPostMetaColor, 25%);
+$lightPaginationInactiveColor: color.adjust(
+  $lightPostMetaColor,
+  $lightness: 25%
+);
 $lightPaginationJumpButtonBackgroundColor: $lightPaginationInactiveColor;
-$lightFooterSeparatorColor: lighten($black, 76%);
+$lightFooterSeparatorColor: color.adjust($black, $lightness: 76%);
 
 @mixin lightModeColors {
   --background-color: #{$lightBackgroundColor};
@@ -122,30 +143,33 @@ html:not(.dark) {
 $darkBackgroundColor: $black;
 $darkTextColor: hsl($baseHue, 5%, 70%);
 $darkLinkColor: hsl($baseHue, 60%, 75%);
-$darkLinkHoverColor: darken($darkLinkColor, 10%);
+$darkLinkHoverColor: color.adjust($darkLinkColor, $lightness: -10%);
 $darkPostMetaColor: $darkTextColor;
-$darkTopMetaColor: darken($darkTextColor, 10%);
+$darkTopMetaColor: color.adjust($darkTextColor, $lightness: -10%);
 $darkBottomMetaColor: $darkTopMetaColor;
-$darkNoticeBorderColor: darken($baseColor, 2%);
-$darkNoticeBackgroundColor: lighten($black, 3%);
-$darkCodeBackgroundColor: lighten($black, 3%);
-$darkCodeSelectionBackgroundColor: lighten($black, 16%);
-$darkMarkBackgroundColor: darken($darkLinkHoverColor, 25%);
-$darkMarkColor: lighten($darkTextColor, 0%);
+$darkNoticeBorderColor: color.adjust($baseColor, $lightness: -2%);
+$darkNoticeBackgroundColor: color.adjust($black, $lightness: -3%);
+$darkCodeBackgroundColor: color.adjust($black, $lightness: -3%);
+$darkCodeSelectionBackgroundColor: color.adjust($black, $lightness: -16%);
+$darkMarkBackgroundColor: color.adjust($darkLinkHoverColor, $lightness: -25%);
+$darkMarkColor: $darkTextColor;
 $darkThemeSwitcherColor: $darkLinkColor;
 $darkMobileMenuBackgroundColor: $darkBackgroundColor;
-$darkMobileMenuSeparatorColor: lighten($black, 5%);
-$darkScrollUpArrowBackgroundColor: darken($darkLinkColor, 10%);
-$darkScrollUpArrowHoverBackgroundColor: darken(
+$darkMobileMenuSeparatorColor: color.adjust($black, $lightness: -5%);
+$darkScrollUpArrowBackgroundColor: color.adjust(
+  $darkLinkColor,
+  $lightness: -10%
+);
+$darkScrollUpArrowHoverBackgroundColor: color.adjust(
   $darkScrollUpArrowBackgroundColor,
-  7%
+  $lightness: -7%
 );
 $darkPaginationPageNumberInputTextColor: $darkTextColor;
-$darkPaginationColor: lighten($black, 55%);
+$darkPaginationColor: color.adjust($black, $lightness: -55%);
 $darkPaginationFocusBackgroundColor: $darkNoticeBackgroundColor;
 $darkPaginationInactiveColor: darken($darkPostMetaColor, 18%);
 $darkPaginationJumpButtonBackgroundColor: $darkPaginationInactiveColor;
-$darkFooterSeparatorColor: lighten($black, 10%);
+$darkFooterSeparatorColor: color.adjust($black, $lightness: 10%);
 
 @mixin darkModeColors {
   --background-color: #{$darkBackgroundColor};
