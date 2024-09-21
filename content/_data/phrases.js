@@ -56,4 +56,5 @@ module.exports = {
   share: 'Share',
   powered_by: 'Powered by',
   template: 'Template',
+  circa: 'ca.',
 };
