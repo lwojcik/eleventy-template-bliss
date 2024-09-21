@@ -288,6 +288,12 @@ module.exports = {
       sensitivity: 'base',
     },
   },
+  // ---------------------------------------------------------------------------
+  // Other options
+  // ---------------------------------------------------------------------------
   // Enable reading progress bar on article pages
   enableReadingProgressBar: true,
+  // Show post length as word count ('count'), reading time ('time') or disable
+  // it completely (false)
+  showPostLength: 'time',
 };
