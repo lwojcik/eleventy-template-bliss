@@ -11,8 +11,13 @@
     </div>
     <div class="post-meta">
         <time>{{ postDate }}</time>
+        {% if siteConfig.showPostLength == 'time' %}
         <span class="separator">{{ phrases.meta_separator }}</span>
-        <span class="reading-time" title="{{ wordCount }} {{ phrases.words }}">{{ readingTime }} {{ phrases.min }} {{ phrases.read }}</span>        
+        <span class="reading-time" title="{{ wordCount }} {{ phrases.words }}">{{ readingTime }} {{ phrases.min }} {{ phrases.read }}</span> 
+        {% elif siteConfig.showPostLength == 'count' %}
+        <span class="separator">{{ phrases.meta_separator }}</span>
+        <span class="reading-time">{{ phrases.circa }} {{ wordCount|round }} {{ phrases.words }}</span>   
+        {% endif %}
     </div>
   </article>
 </a>
