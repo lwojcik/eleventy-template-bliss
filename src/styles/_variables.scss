@@ -167,7 +167,10 @@ $darkScrollUpArrowHoverBackgroundColor: color.adjust(
 $darkPaginationPageNumberInputTextColor: $darkTextColor;
 $darkPaginationColor: color.adjust($black, $lightness: -55%);
 $darkPaginationFocusBackgroundColor: $darkNoticeBackgroundColor;
-$darkPaginationInactiveColor: darken($darkPostMetaColor, $lightness: -18%);
+$darkPaginationInactiveColor: color.adjust(
+  $darkPostMetaColor,
+  $lightness: -18%
+);
 $darkPaginationJumpButtonBackgroundColor: $darkPaginationInactiveColor;
 $darkFooterSeparatorColor: color.adjust($black, $lightness: 10%);
 
