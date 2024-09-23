@@ -45,28 +45,36 @@ const buildDir = '_site';
 async function srcset(filename, hash, format, metadataWidth, pathPrefix) {
   // Create a map of all file names
   const names = await Promise.all(
-    widths.map((width) => resize(filename, width, hash, format, metadataWidth, pathPrefix))
+    widths.map((width) =>
+      resize(filename, width, hash, format, metadataWidth, pathPrefix),
+    ),
   );
-  
-  const normalizedName = (name) => pathPrefix.length > 1
-    ? join(pathPrefix, name)
-    : name;
+
+  const normalizedName = (name) =>
+    pathPrefix.length > 1 ? join(pathPrefix, name) : name;
 
   return names.map((n, i) => normalizedName(`${n} ${widths[i]}w`)).join(', ');
 }
 
-async function resize(filename, width, hash, format, metadataWidth, pathPrefix) {
-  const out = pathPrefix.length > 1
-    ? sizedName(filename, width, hash, format).split(pathPrefix)[1]
-    : sizedName(filename, width, hash, format);
+async function resize(
+  filename,
+  width,
+  hash,
+  format,
+  metadataWidth,
+  pathPrefix,
+) {
+  const out =
+    pathPrefix.length > 1
+      ? sizedName(filename, width, hash, format).split(pathPrefix)[1]
+      : sizedName(filename, width, hash, format);
 
   if (existsSync(join(buildDir, out))) {
     return out;
   }
 
-  const normalizedFileName = pathPrefix.length > 1
-    ? filename.split(pathPrefix)[1]
-    : filename;
+  const normalizedFileName =
+    pathPrefix.length > 1 ? filename.split(pathPrefix)[1] : filename;
 
   const file = join(assetsDir, normalizedFileName);
 
@@ -90,7 +98,7 @@ function sizedName(filename, width, hash, format) {
   }
   return filename.replace(
     /\.\w+$/,
-    () => '-' + hash + '-' + width + 'w.' + ext
+    () => '-' + hash + '-' + width + 'w.' + ext,
   );
 }
 
@@ -99,19 +107,24 @@ function hashedName(filename, hash) {
 }
 
 async function setSrcset(img, src, hash, format, metadataWidth, pathPrefix) {
-  img.setAttribute('srcset', await srcset(src, hash, format, metadataWidth, pathPrefix));
+  img.setAttribute(
+    'srcset',
+    await srcset(src, hash, format, metadataWidth, pathPrefix),
+  );
 }
 
 const processImage = async (el, pathPrefix) => {
-  const filename = pathPrefix.length > 1
-    ? `/${el.getAttribute('src').split(pathPrefix)[1]}`
-    : el.getAttribute('src');
+  const filename =
+    pathPrefix.length > 1
+      ? `/${el.getAttribute('src').split(pathPrefix)[1]}`
+      : el.getAttribute('src');
 
-  if (/^(https?:\/\/|\/\/)/i.test(filename)) {
-    return;
-  }
+  const skipProcessing =
+    !filename ||
+    /^(https?:\/\/|\/\/)/i.test(filename) ||
+    extname(filename.toLowerCase()) === '.svg';
 
-  if (extname(filename.toLowerCase()) === '.svg') {
+  if (skipProcessing) {
     return;
   }
 
@@ -147,7 +160,7 @@ const processImage = async (el, pathPrefix) => {
 
   copyFileSync(
     join(assetsDir, filename),
-    join(buildDir, hashedName(filename, hash))
+    join(buildDir, hashedName(filename, hash)),
   );
 };
 
@@ -179,7 +192,7 @@ module.exports = {
   initArguments: {},
   configFunction: async (eleventyConfig = {}) => {
     eleventyConfig.addTransform('imageConversion', (content, outputPath) =>
-      convert(content, outputPath, eleventyConfig.pathPrefix)
+      convert(content, outputPath, eleventyConfig.pathPrefix),
     );
   },
 };
