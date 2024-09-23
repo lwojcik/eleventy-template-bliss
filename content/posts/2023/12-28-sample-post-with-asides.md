@@ -12,7 +12,9 @@ tags:
 hasAsides: true
 ---
 
-This is the first paragraph of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacus magna, lobortis sit amet mauris sed, fringilla scelerisque risus. Suspendisse sem nibh, pretium id ante sed, porttitor malesuada nibh. Vivamus pretium nunc nec pretium placerat.
+This is the first paragraph[^1] of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacus magna, lobortis sit amet mauris sed, fringilla scelerisque risus. Suspendisse sem nibh, pretium id ante sed, porttitor malesuada nibh. Vivamus pretium nunc nec pretium placerat.
+
+[^1]: Some footnote
 
 **This is the second paragraph of this post.** Nunc placerat suscipit ante, eleifend finibus turpis pellentesque ac. Suspendisse quam arcu, maximus varius bibendum at, gravida sed ante. Ut non interdum elit, sed fringilla orci. Phasellus at venenatis felis. Morbi vel sapien eget est tristique egestas ac at neque. In sollicitudin viverra porta. Morbi vitae nisl non arcu eleifend sollicitudin.
 
