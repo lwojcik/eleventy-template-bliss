@@ -39,6 +39,10 @@
     {{ phrases.view_all_articles_tagged_as }} {{ tag.title|capitalizeAllWords }}
   {%- elif description -%}
     {{ description | truncate(140) }}
+  {%- elif (tags or []).indexOf('post') > -1 -%}
+    {{- page.excerpt -}}
+  {%- elif (tags or []).indexOf('page') > -1 -%}
+    {{- title -}}
   {%- else -%}
     {{ siteConfig.site.description }}
   {%- endif -%}
