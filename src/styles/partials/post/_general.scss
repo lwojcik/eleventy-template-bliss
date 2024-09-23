@@ -16,4 +16,42 @@
       font-size: 1rem;
     }
   }
+
+  aside {
+    display: block;
+    font-family: $sansSerifFontFamily;
+    color: var(--aside-color);
+    position: absolute;
+    width: 15rem;
+    left: calc(100% + 2rem);
+
+    p {
+      font-size: 1.0375rem;
+      margin-top: 0;
+    }
+
+    a {
+      padding-bottom: 1px;
+    }
+
+    @include maxWidth(1024px) {
+      position: static;
+      left: auto;
+      width: auto;
+    }
+  }
+}
+
+.with-asides {
+  .single-article {
+    max-width: 43rem;
+    position: relative;
+
+    @include maxWidth(1024px) {
+      position: static;
+      margin: 0 auto;
+      left: auto;
+      right: auto;
+    }
+  }
 }

@@ -9,10 +9,6 @@ footer .container {
   margin-top: 0;
 }
 
-article {
-  overflow: auto;
-}
-
 @include aboveMediumBreakpoint {
   .container {
     max-width: 32rem;
@@ -30,5 +26,10 @@ article {
 @include biggerThanMobile {
   .container {
     max-width: 43rem;
+
+    &.with-asides,
+    &.with-asides footer .container {
+      max-width: 58rem;
+    }
   }
 }
