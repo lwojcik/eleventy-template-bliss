@@ -1,5 +1,12 @@
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta property="og:title" content="{{ ogPageTitle }}">
 <meta property="og:url" content="{{ page.url | alwaysProductionUrl }}">
 <meta property="og:type" content="{{ ogCardType }}">
 <meta property="og:image" content="{{ ogImage }}">
+{%- if ogCardType === 'article' %}
+<meta property="article:published_time" content="{{ date|isoDate }}" />
+<meta property="article:modified_time" content="{{ date|isoDate }}" />
+{% endif -%}
 <meta property="twitter:image" content="{{ ogImage }}">
 <meta property="twitter:card" content="{{ x.card }}">
+<meta name="twitter:site" content="{{ x.site }}" />

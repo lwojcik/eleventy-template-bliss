@@ -129,6 +129,7 @@ module.exports = {
   x: {
     card: 'summary_large_image',
     image: '/images/share-1200x600.jpg',
+    site: '@your_twitter_handle',
   },
   // ---------------------------------------------------------------------------
   // Settings for post tags
