@@ -77,8 +77,9 @@ module.exports = {
     // .well-known/webfinger file for you so that you'll be searchable
     // on Mastodon as @your_username@your_site_domain.example.org.
     // ALL links provided here will be added to <head> section of your site
-    // with a rel='me' attribute so that you can verify their ownership
-    // on Mastodon and other services that use this method of verification.
+    // with a rel='me' attribute and fediverse:creator tag so that you can
+    // verify their ownership on Mastodon and other services that use this
+    // method of verification.
     fediverse: [
       {
         username: 'JohnMastodon',
