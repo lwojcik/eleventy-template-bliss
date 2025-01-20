@@ -1,6 +1,8 @@
 # Bliss - Blog Theme For Eleventy
 
-**Bliss** is a single-column blog template for [Eleventy static site generator](https://11ty.dev) with strong focus on simplicity without sacrificing functionality.
+> As of January 2025, this project is no longer maintained or updated.
+
+**Bliss** is a single-column blog template for [Eleventy v2.x](https://11ty.dev) with strong focus on simplicity without sacrificing functionality.
 
 It is a modified and improved version of the theme running [my personal blog](https://blog.lukaszwojcik.net/).
 
@@ -20,10 +22,6 @@ It is a modified and improved version of the theme running [my personal blog](ht
 - modular CSS augmented with SASS
 - custom disclaimers alongside post content
 - and more
-
-## Live demo
-
-https://eleventy-bliss.lkmt.us/
 
 ## Setup
 
@@ -140,18 +138,6 @@ You can do the same for pages by modifying `content/pages/pages.json` file.
 Until version 2.4.0 Bliss was bundled with a [favicon generation plugin](https://www.npmjs.com/package/eleventy-plugin-gen-favicons). Due to unresolved bugs this plugin is no longer included with the template.
 
 If you want to reimplement it yourself, change history from [this pull request](https://github.com/lwojcik/eleventy-template-bliss/pull/99) may be helpful.
-
-## Contributions
-
-Contributions of the following kind are welcome:
-
-- bug reports / fixes
-- documentation improvements
-- improvements of existing features
-
-I consider the project complete and apart from specific exceptions, no new features are planned.
-
-Before contributing be sure to read [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 ## License
 
